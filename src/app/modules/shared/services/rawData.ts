@@ -1,6 +1,6 @@
 import {
   Course,
-  CourseCategory,
+  Category,
   Enrollment,
   PlayList,
   PlayListItem,
@@ -11,8 +11,8 @@ import {
   User,
 } from '../models';
 
-//#region RawCourseCategory
-export const rawRawCourseCategory: Partial<CourseCategory>[] = [
+//#region RawCategory
+export const rawRawCategory: Partial<Category>[] = [
   {
     id: 1,
     name: 'Developer',
@@ -39,10 +39,10 @@ export const rawRawCourseCategory: Partial<CourseCategory>[] = [
   },
 ];
 
-export const getRawRawCourseCategory = (
+export const getRawRawCategory = (
   categoryId: number
-): Partial<CourseCategory> =>
-  rawRawCourseCategory.find((category) => category.id === categoryId);
+): Partial<Category> =>
+  rawRawCategory.find((category) => category.id === categoryId);
 //#endregion
 
 //#region RawStatus
@@ -597,19 +597,19 @@ const buildPlaylist = (playlistId: number) => ({
 export const rawCourses: Partial<Course>[] = [
   {
     ...getRawRawCourse(1),
-    categories: [getRawRawCourseCategory(1)],
+    categories: [getRawRawCategory(1)],
     tags: [getRawRawTag(1)],
     ...buildPlaylist(1),
   },
   {
     ...getRawRawCourse(2),
-    categories: [getRawRawCourseCategory(1), getRawRawCourseCategory(2)],
+    categories: [getRawRawCategory(1), getRawRawCategory(2)],
     tags: [getRawRawTag(1)],
     ...buildPlaylist(2),
   },
   {
     ...getRawRawCourse(3),
-    categories: [getRawRawCourseCategory(3)],
+    categories: [getRawRawCategory(3)],
     tags: [getRawRawTag(3)],
     ...buildPlaylist(2),
   },
@@ -637,21 +637,21 @@ export const getRawTag = (tagId: number): Partial<Tag> =>
   rawTags.find((tag) => tag.id === tagId);
 //#endregion
 
-//#region CourseCategory
-export const rawCourseCategory: Partial<CourseCategory>[] = [
+//#region Category
+export const rawCategory: Partial<Category>[] = [
   {
-    ...getRawRawCourseCategory(1),
+    ...getRawRawCategory(1),
     courses: [getRawCourse(1), getRawCourse(2)],
   },
-  { ...getRawRawCourseCategory(2), courses: [getRawCourse(2)] },
-  { ...getRawRawCourseCategory(3), courses: [getRawCourse(3)] },
-  { ...getRawRawCourseCategory(4), courses: [getRawCourse(4)] },
+  { ...getRawRawCategory(2), courses: [getRawCourse(2)] },
+  { ...getRawRawCategory(3), courses: [getRawCourse(3)] },
+  { ...getRawRawCategory(4), courses: [getRawCourse(4)] },
 ];
 
-export const getRawCourseCategory = (
+export const getRawCategory = (
   categoryId: number
-): Partial<CourseCategory> =>
-  rawCourseCategory.find((category) => category.id === categoryId);
+): Partial<Category> =>
+  rawCategory.find((category) => category.id === categoryId);
 //#endregion
 
 //#region Enrollments
