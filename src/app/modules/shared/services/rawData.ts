@@ -2,6 +2,7 @@ import {
   Category,
   Course,
   Enrollment,
+  PlayList,
   PlayListItem,
   PlayListSource,
   Role,
@@ -9,9 +10,6 @@ import {
   Tag,
   User,
 } from '../../shared-types';
-import {
-  PlayList,
-} from '../models';
 
 //#region RawCategory
 export const rawRawCategory: Partial<Category>[] = [
