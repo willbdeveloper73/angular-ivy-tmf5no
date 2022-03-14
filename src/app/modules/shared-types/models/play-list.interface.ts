@@ -9,10 +9,9 @@ import { Status } from './status.interface';
 import { convertDate } from './utils';
 
 export interface PlayList extends BaseName {
-  // id?: number;
-  // name?: string;
   description?: string;
   thumbnail?: string;
+  duration?: number;
   statusId?: number;
   isDeleted?: boolean;
   createdAt?: Date;
