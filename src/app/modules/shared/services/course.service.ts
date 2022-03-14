@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { combineLatest, Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { Course, CourseListMeta, Category, Tag } from '../../shared-types';
 import { CrudService } from './crud.service';
 import { rawCourses } from './rawData';
-import { Course, Category } from '../../shared-types';
-import { CourseListMeta, Tag } from '../models';
 
 @Injectable({ providedIn: 'root' })
 export class CourseService extends CrudService<Course> {
