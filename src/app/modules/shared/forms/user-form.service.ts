@@ -36,8 +36,6 @@ export class UserForm extends BaseForm {
 
   patch = (record: Partial<User>) => ({
     ...record,
-    datePublished: convertDate(record?.datePublished),
-    dateUpdated: convertDate(record?.dateUpdated),
   });
 
   values = (form: FormGroup): Partial<User> => ({
