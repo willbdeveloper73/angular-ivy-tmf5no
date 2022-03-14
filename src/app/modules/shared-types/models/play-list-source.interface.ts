@@ -1,6 +1,7 @@
 import { BaseName } from './base-name.interface';
 import { PlayListItem } from './play-list-item.interface';
 import { Tag } from './tag.interface';
+import { User } from './user.interface';
 
 export interface PlayListSource extends BaseName {
   seq?: number;
