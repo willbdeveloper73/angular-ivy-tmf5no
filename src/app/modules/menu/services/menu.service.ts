@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { NavbarItem } from '../../shared-types';
-import { Category, CategoryService } from '../../shared';
+import { Category, NavbarItem } from '../../shared-types';
+import { CategoryService } from '../../shared';
 
 @Injectable({ providedIn: 'root' })
 export class MenuService {
