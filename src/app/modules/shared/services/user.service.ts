@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from '../models';
+import { User } from '../../shared-types';
 import { CrudService } from './crud.service';
 import { rawUsers } from './rawData';
 
