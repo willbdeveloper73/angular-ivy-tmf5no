@@ -1,5 +1,6 @@
 // export * from './base-id.interface';
 // export * from './base-name.interface';
+export * from './category.interface';
 export * from './course.interface';
 // export * from './course-category.interface';
 // export * from './enrollment.interface';
