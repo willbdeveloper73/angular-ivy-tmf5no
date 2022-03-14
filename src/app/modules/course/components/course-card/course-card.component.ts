@@ -9,8 +9,12 @@ import {
 } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import {
-  AuthenticatedUserService,
   Course,
+//   Enrollment,
+//   User,
+} from '../../../shared-types';
+import {
+  AuthenticatedUserService,
   Enrollment,
   EnrollmentService,
   User,
