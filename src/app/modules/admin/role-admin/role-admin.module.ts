@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { SharedModule, RoleElements, RoleForm } from '../../shared';
+import { RoleElements } from '../../shared-types';
+import { SharedModule, RoleForm } from '../../shared';
 import { FormModule } from '../../form';
 import { RoleAdminRoutingModule } from './role-admin-routing.module';
 import { Components, ComponentsExport } from './components';
