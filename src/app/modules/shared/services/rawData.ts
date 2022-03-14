@@ -2,12 +2,12 @@ import {
   Category,
   Course,
   Enrollment,
+  PlayListItem,
   Status,
   Tag,
 } from '../../shared-types';
 import {
   PlayList,
-  PlayListItem,
   PlayListSource,
   Role,
   User,
