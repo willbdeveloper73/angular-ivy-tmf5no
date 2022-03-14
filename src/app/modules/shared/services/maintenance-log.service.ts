@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MaintenanceLog } from '../models';
+import { MaintenanceLog } from '../../shared-types';
 import { CrudService } from './crud.service';
 
 @Injectable({ providedIn: 'root' })
