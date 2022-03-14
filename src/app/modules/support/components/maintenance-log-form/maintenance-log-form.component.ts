@@ -4,11 +4,13 @@ import { FormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
 import {
-  AuthenticatedUserService,
   MaintenanceLog,
+  User,
+} from '../../../shared-type';
+import {
+  AuthenticatedUserService,
   MaintenanceLogForm,
   MaintenanceLogService,
-  User,
 } from '../../../shared';
 
 @Component({
