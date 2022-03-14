@@ -2,8 +2,15 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { combineLatest, Subject } from 'rxjs';
 import { map, take, takeUntil, tap } from 'rxjs/operators';
 import {
-  AuthenticatedUserService,
   Course,
+//   Player,
+//   PlayListItem,
+//   PlayListSource,
+//   User,
+//   Watched,
+} from '../../../shared-types';
+import {
+  AuthenticatedUserService,
   CourseService,
   Player,
   PlayerService,
