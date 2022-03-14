@@ -8,15 +8,8 @@ import {
   combineLatest,
 } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import {
-  Course,
-  Enrollment,
-//   User,
-} from '../../../shared-types';
-import {
-  AuthenticatedUserService,
-  User,
-} from '../../../shared';
+import { Course, Enrollment, User } from '../../../shared-types';
+import { AuthenticatedUserService } from '../../../shared';
 
 @Component({
   selector: 'app-course-card-small',
