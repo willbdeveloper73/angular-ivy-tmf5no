@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { RequestorInfo } from '../../shared-types';
 import { BaseForm } from './base-form.service';
-import { RequestorInfo } from '../models';
 
 @Injectable()
 export class RequestorInfoForm extends BaseForm {
