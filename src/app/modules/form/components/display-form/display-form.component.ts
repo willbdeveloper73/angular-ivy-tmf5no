@@ -9,20 +9,16 @@ import {
 import { FormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
+import { FormTableElement, PlayList, Status } from '../../../shared-types';
 import {
-  FormTableElement,
-  PlayList,
-  PlayListService,
-  Status,
+  PlayListService,  
   StatusService,
   UserService,
 } from '../../../shared';
-// import { FormTableElement, PlayList } from '../../../shared-types';
 
 @Component({
   selector: 'app-display-form',
   templateUrl: './display-form.component.html',
-  // styleUrls: ['./display-form.component.scss'],
 })
 export class DisplayFormComponent implements OnInit, OnDestroy {
   @Input() Form: FormGroup;
