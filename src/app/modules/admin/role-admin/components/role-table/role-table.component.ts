@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Role, RoleElements, RoleService } from '../../../../shared';
+import { Role, RoleElements } from '../../../../shared-types';
+import { RoleService } from '../../../../shared';
 
 @Component({
   selector: 'app-role-table',
