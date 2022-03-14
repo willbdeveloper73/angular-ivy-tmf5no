@@ -3,17 +3,12 @@ import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { CrudService, Role, RoleService, RoleForm } from '../../../../shared';
+import { Role } from '../../../../shared-types';
+import { RoleService, RoleForm } from '../../../../shared';
 
 @Component({
   selector: 'app-role-admin',
   templateUrl: './role-admin.component.html',
-  providers: [
-    {
-      provide: CrudService,
-      useClass: RoleService,
-    },
-  ],
 })
 export class RoleAdminComponent implements OnInit, OnDestroy {
   form: FormGroup;
