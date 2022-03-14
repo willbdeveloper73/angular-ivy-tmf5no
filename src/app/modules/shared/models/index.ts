@@ -13,7 +13,7 @@ export * from './pagination.interface';
 export * from './play-list.interface';
 // export * from './play-list-item.interface';
 // export * from './play-list-source.interface';
-export * from './role.interface';
+// export * from './role.interface';
 export * from './player.interface';
 export * from './requestor-info.interface';
 // export * from './select-item.interface';
