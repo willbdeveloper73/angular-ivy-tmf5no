@@ -13,7 +13,7 @@ export interface PlayList extends BaseName {
   thumbnail?: string;
   duration?: number;
   statusId?: number;
-  isDeleted?: boolean;
+//   isDeleted?: boolean;
   createdAt?: Date;
   updatedAt?: Date;
   deletedAt?: Date;
