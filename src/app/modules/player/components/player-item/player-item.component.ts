@@ -1,15 +1,11 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { BehaviorSubject, Subject, Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import {
-  PlayListItem,
-} from '../../../shared-types';
-import {
+import { PlayListItem, User, Watched, } from '../../../shared-types';
+import { 
   AuthenticatedUserService,
   PlayListItemService,
   PlayerService,
-  User,
-  Watched,
 } from '../../../shared';
 
 @Component({
