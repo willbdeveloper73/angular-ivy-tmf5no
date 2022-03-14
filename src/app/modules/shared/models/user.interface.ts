@@ -3,10 +3,10 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Enrollment } from '../../shared-types';
 import { BaseName } from './base-name.interface';
 import { Role } from './role.interface';
 import { Settings } from './settings.interface';
-import { Enrollment } from './enrollment.interface';
 import { Watched } from './watched.interface';
 
 import { FormTableElement } from './form-table-element.interface';
