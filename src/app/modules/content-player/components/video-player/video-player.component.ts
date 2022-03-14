@@ -3,6 +3,7 @@ import { combineLatest, Subject } from 'rxjs';
 import { map, take, takeUntil, tap } from 'rxjs/operators';
 import {
   Course,
+  PlayListItem,
 //   Player,
 //   PlayListItem,
 //   PlayListSource,
@@ -17,7 +18,6 @@ import {
   PlayListService,
   PlayListItemService,
   PlayListSourceService,
-  PlayListItem,
   PlayListSource,
   User,
   WatchedService,
