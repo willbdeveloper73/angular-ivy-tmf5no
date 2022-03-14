@@ -3,6 +3,8 @@ import { BaseName } from './base-name.interface';
 import { Role } from './role.interface';
 import { FormTableElement } from './form-table-element.interface';
 import { Enrollment } from './enrollment.interface';
+import { Settings } from './settings.interface';
+import { Watched } from './watched.interface';
 
 export interface User extends BaseName {
   guid?: string;
@@ -20,8 +22,11 @@ export interface User extends BaseName {
   color?: string;
   status?: string;
 
+  settings?: Partial<Settings>;
+
   roles?: Partial<Role>[];
   enrollments?: Partial<Enrollment>[];
+  watched?: Partial<Watched>[];
 }
 
 export const generateUserForm = (
