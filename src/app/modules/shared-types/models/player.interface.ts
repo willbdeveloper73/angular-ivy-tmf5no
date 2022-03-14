@@ -1,7 +1,7 @@
 import { BaseName } from './base-name.interface';
 import { Course } from './course.interface';
 import { PlayList } from './play-list.interface';
-import { PlayListItem } from './play-list-item.interace';
+import { PlayListItem } from './play-list-item.interface';
 import { PlayListSource } from './play-list-source.interface';
 import { User } from './user.interface';
 import { Watched } from './watched.interface';
