@@ -10,16 +10,14 @@ import {
 import { map, tap } from 'rxjs/operators';
 import {
   Course,
-//   Enrollment,
+  Enrollment,
 //   User,
 } from '../../../shared-types';
 import {
   AuthenticatedUserService,
-  Enrollment,
   EnrollmentService,
   User,
 } from '../../../shared';
-// import { Enrollment, User } from '../../../shared-types';
 
 @Component({
   selector: 'app-course-card',
