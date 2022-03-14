@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CrudService } from './crud.service';
-import { Pagination } from '../models';
+import { Pagination } from '../../shared-types';
 
 @Injectable({ providedIn: 'root' })
 export class PaginationService {
