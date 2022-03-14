@@ -12,8 +12,15 @@ import { combineLatest, Subject } from 'rxjs';
 import { map, takeUntil, tap } from 'rxjs/operators';
 
 import {
-  AuthenticatedUserService,
   Course,
+//   PlayList,
+//   PlayListItem,
+//   PlayListSource,
+//   User,
+} from '../../../shared-types';
+import {
+  AuthenticatedUserService,
+//   Course,
   PlayerService,
   PlayList,
   PlayListItem,
@@ -22,7 +29,6 @@ import {
   PlayListSource,
   PlayListSourceService,
   User,
-  // Watched,
 } from '../../../shared';
 import {
   VideoPlayerComponent,
