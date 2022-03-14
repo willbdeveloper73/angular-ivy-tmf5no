@@ -4,24 +4,19 @@ import { map, take, takeUntil, tap } from 'rxjs/operators';
 import {
   Course,
   PlayListItem,
-//   Player,
-//   PlayListItem,
-//   PlayListSource,
-//   User,
-//   Watched,
+  Player,
+  PlayListSource,
+  User,
+  Watched,
 } from '../../../shared-types';
 import {
   AuthenticatedUserService,
   CourseService,
-  Player,
   PlayerService,
   PlayListService,
   PlayListItemService,
   PlayListSourceService,
-  PlayListSource,
-  User,
   WatchedService,
-  Watched,
 } from '../../../shared';
 
 @Component({
