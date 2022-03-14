@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { combineLatest } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { CrudService } from './crud.service';
-import { Course, CourseListMeta } from '../models';
+import { Course, CourseListMeta } from '../../shared-types';
 import { CourseService } from './course.service';
 
 @Injectable({ providedIn: 'root' })
