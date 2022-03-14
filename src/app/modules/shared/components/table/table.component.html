@@ -9,7 +9,7 @@
     <div class="overflow-x-auto">
       <div class="inline-block min-w-full py-2">
         <div class="overflow-hidden">
-          <table class="min-w-full bg-white">
+          <table class="min-w-full bg-white divide-y divide-gray-200">
             <thead class="border-b">
               <tr>
                 <ng-container *ngFor="let column of columns$ | async">
@@ -30,7 +30,6 @@
                 <th
                   scope="col"
                   class="
-                    border 
                     px-6
                     py-4
                     text-left text-sm
@@ -44,7 +43,7 @@
                 </th>
               </tr>
             </thead>
-            <tbody class="bg-grey-light overflow-y-scroll h-1/5">
+            <tbody class="bg-grey-light overflow-y-scroll h-1/5 divide-y divide-gray-200">
               <!-- style="height: 20vh" -->
               <tr
                 *ngFor="let row of data; index as i"
@@ -55,7 +54,6 @@
                   <td
                     *ngIf="column.tableDisplay"
                     class="
-                      border 
                       px-6
                       py-4
                       text-sm
