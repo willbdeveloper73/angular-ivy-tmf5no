@@ -4,7 +4,7 @@ export * from './base-name.interface';
 // export * from './category.interface';
 // export * from './course.interface';
 export * from './course-list-meta.interface';
-export * from './course-request.interface';
+// export * from './course-request.interface';
 // export * from './enrollment.interface';
 // export * from './form-table-element.interface';
 // export * from './navbar-item.interface';
