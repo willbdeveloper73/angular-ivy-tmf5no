@@ -4,13 +4,13 @@ import {
   Enrollment,
   PlayListItem,
   PlayListSource,
+  Role,
   Status,
   Tag,
+  User,
 } from '../../shared-types';
 import {
   PlayList,
-  Role,
-  User,
 } from '../models';
 
 //#region RawCategory
