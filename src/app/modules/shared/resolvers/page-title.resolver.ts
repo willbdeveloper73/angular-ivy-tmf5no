@@ -10,7 +10,7 @@ import {
 
 import { Observable, of, forkJoin } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
-import { Category } from '../models';
+import { Category } from '../../shared-types';
 import { CategoryService, TitleBarService } from '../services';
 
 @Injectable({ providedIn: 'root' })
