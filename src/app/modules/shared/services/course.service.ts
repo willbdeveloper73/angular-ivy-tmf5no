@@ -3,7 +3,8 @@ import { combineLatest, Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { CrudService } from './crud.service';
 import { rawCourses } from './rawData';
-import { Course, Category, CourseListMeta, Tag } from '../models';
+import { Course, Category } from '../../shared-types';
+import { CourseListMeta, Tag } from '../models';
 
 @Injectable({ providedIn: 'root' })
 export class CourseService extends CrudService<Course> {
