@@ -3,11 +3,8 @@ import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
-import {
-  PlayListSource,
-  PlayListSourceForm,
-  PlayListSourceService,
-} from '../../../../../shared';
+import { PlayListSource } from '../../../../../shared-types';
+import { PlayListSourceForm, PlayListSourceService } from '../../../../../shared';
 
 @Component({
   selector: 'app-playlists-source-admin',
