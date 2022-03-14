@@ -13,7 +13,6 @@ import { map, takeUntil, tap } from 'rxjs/operators';
 
 import {
   Course,
-  PlayerService,
   PlayList,
   PlayListItem,
   PlayListSource,
@@ -21,6 +20,7 @@ import {
 } from '../../../shared-types';
 import {
   AuthenticatedUserService,
+  PlayerService,
   PlayListService,
   PlayListItemService,
   PlayListSourceService,
