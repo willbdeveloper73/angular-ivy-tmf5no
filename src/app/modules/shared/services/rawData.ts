@@ -16,24 +16,28 @@ export const rawRawCategory: Partial<Category>[] = [
   {
     id: 1,
     name: 'Developer',
+    description: 'No…we\'re not teaching you how to become a software Developer.  However, these courses will give you knowledge of our standards and workflows.',
     image:
       'https://s3.envato.com/files/3c53ef5b-f3d4-49e0-82bd-376915ff94b6/inline_image_preview.jpg',
   },
   {
     id: 2,
     name: 'System Admin',
+    description: 'These courses will allow the team member to become more familiar with our standards and workflows.',
     image:
       'https://i1.wp.com/jobs365.co.za/wp-content/uploads/2019/07/SYSTEM-ADMINISTRATOR.jpg?fit=1200%2C798&ssl=1',
   },
   {
     id: 3,
     name: 'Network Admin',
+    description: 'These courses will allow the team member to become more familiar with our standards and workflows.',
     image:
       'https://www.earnmydegree.com/sites/all/files/public/images/shutterstock_329986208.jpg',
   },
   {
     id: 4,
     name: 'Site Lead',
+    description: 'These courses will allow the team member to become more familiar with our standards and workflows.',
     image:
       'https://heritageofficesuites.com/wp-content/uploads/2017/05/Meeting-Room-Image-19.jpg',
   },
