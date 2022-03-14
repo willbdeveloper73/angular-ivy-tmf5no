@@ -3,10 +3,7 @@ import { Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
-import {
-  MaintenanceLog,
-  User,
-} from '../../../shared-type';
+import { MaintenanceLog, User } from '../../../shared-types';
 import {
   AuthenticatedUserService,
   MaintenanceLogForm,
