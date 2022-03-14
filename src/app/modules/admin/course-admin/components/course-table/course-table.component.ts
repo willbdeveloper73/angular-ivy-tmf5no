@@ -12,6 +12,17 @@ import {
   templateUrl: './course-table.component.html',
 })
 export class CourseTableComponent implements OnInit {
+  filterColumns = [
+    {
+      name: 'name',
+    },
+    {
+      name: 'statusId',
+    },
+    {
+      name: 'subject',
+    },
+  ];
   constructor(
     public service: CourseService,
     @Inject('COLUMNS') public columns: any,
