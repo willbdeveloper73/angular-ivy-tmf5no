@@ -3,12 +3,12 @@ import {
   Course,
   Enrollment,
   PlayListItem,
+  PlayListSource,
   Status,
   Tag,
 } from '../../shared-types';
 import {
   PlayList,
-  PlayListSource,
   Role,
   User,
 } from '../models';
