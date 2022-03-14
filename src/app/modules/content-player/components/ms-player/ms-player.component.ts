@@ -4,8 +4,10 @@ import { takeUntil } from 'rxjs/operators';
 import {
   Player,
   PlayListSource,
-  PlayerService,
   Watched,
+} from '../../../shared-types';
+import {
+  PlayerService,
   WatchedService,
 } from '../../../shared';
 
