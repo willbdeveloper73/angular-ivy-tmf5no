@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { Enrollment } from '../../shared-types';
-import { Role, User, Watched } from '../models';
+import { Enrollment, Role, User, Watched } from '../../shared-types';
 import { CrudService } from './crud.service';
 import { CourseService } from './course.service';
 import { UserService } from './user.service';
