@@ -3,17 +3,8 @@ import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
-import {
-  PlayListItem,
-  PlayListItemForm,
-  PlayListItemService,
-  CrudService,
-} from '../../../../../shared';
-// import {
-//   PlayListItemElements,
-//   generatePlayListItemForm,
-//   generatePlayListItemFromForm,
-// } from '../../../../../shared-types';
+import { PlayListItem } from '../../../../../shared-types';
+import { PlayListItemForm, PlayListItemService } from '../../../../../shared';
 
 @Component({
   selector: 'app-playlists-item-admin',
