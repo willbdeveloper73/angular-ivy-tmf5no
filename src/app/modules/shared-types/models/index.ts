@@ -7,6 +7,7 @@ export * from './enrollment.interface';
 export * from './form-table-element.interface';
 export * from './maintenance-log.interface';
 export * from './navbar-item.interface';
+export * from './pagination.interface';
 export * from './play-list.interface';
 export * from './player.interface';
 export * from './play-list-item.interface';
