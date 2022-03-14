@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { PlayList, PlayListItem } from '../models';
+import { PlayListItem } from '../../shared-types';
+import { PlayList } from '../models';
 import { CrudService } from './crud.service';
 import { rawPlayListItems, rawPlayLists } from './rawData';
 
