@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Pagination } from '../../models';
+import { Pagination } from '../../../shared-types';
 
 @Component({
   selector: 'app-pagination',
