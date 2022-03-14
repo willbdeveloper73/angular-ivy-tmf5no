@@ -11,7 +11,7 @@ export * from './form-table-element.interface';
 export * from './maintenance-log.interface';
 export * from './pagination.interface';
 export * from './play-list.interface';
-export * from './play-list-item.interface';
+// export * from './play-list-item.interface';
 export * from './play-list-source.interface';
 export * from './role.interface';
 export * from './player.interface';
