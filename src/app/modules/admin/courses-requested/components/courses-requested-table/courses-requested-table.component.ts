@@ -2,8 +2,8 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   CourseRequest,
-  CourseElements,
-  CrudService,
+//   CourseElements,
+//   CrudService,
   CourseRequestService,
 } from '../../../../shared';
 
