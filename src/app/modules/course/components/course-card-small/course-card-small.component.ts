@@ -10,13 +10,11 @@ import {
 import { map, tap } from 'rxjs/operators';
 import {
   Course,
-//   Enrollment,
+  Enrollment,
 //   User,
 } from '../../../shared-types';
 import {
   AuthenticatedUserService,
-  Enrollment,
-  EnrollmentService,
   User,
 } from '../../../shared';
 
@@ -38,12 +36,8 @@ export class CourseCardSmallComponent implements OnInit, OnDestroy {
 
   constructor(
     public user: AuthenticatedUserService,
-    // public service: EnrollmentService,
     public router: Router
-  ) {
-    //NOTE: This is a temporary fix for the course card component.
-    // this.service.getAllForMe();
-  }
+  ) {}
 
   ngOnInit(): void {
     this.user.item$
