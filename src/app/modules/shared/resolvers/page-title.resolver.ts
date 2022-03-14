@@ -35,7 +35,7 @@ export class PageTitleResolver implements Resolve<{ any }> {
         if (categoryId) {
           this.categoryService.get(categoryId);
           this.categoryService.item$.subscribe(
-            (category: Partial<CourseCategory>) =>
+            (category: Partial<Category>) =>
               this.titleService.setTitle(`${category.name} Courses`)
           );
         }
