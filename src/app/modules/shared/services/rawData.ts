@@ -1,15 +1,15 @@
 import {
-  Course,
   Category,
+  Course,
   Enrollment,
+  Status,
+  Tag,
 } from '../../shared-types';
 import {
   PlayList,
   PlayListItem,
   PlayListSource,
   Role,
-  Status,
-  Tag,
   User,
 } from '../models';
 
