@@ -619,7 +619,7 @@ export const rawCourses: Partial<Course>[] = [
   },
   {
     ...getRawRawCourse(4),
-    categories: [getRawRawCourseCategory(4)],
+    categories: [getRawRawCategory(4)],
     tags: [getRawRawTag(4)],
     ...buildPlaylist(3),
   },
