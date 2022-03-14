@@ -10,6 +10,7 @@ export * from './navbar-item.interface';
 // export * from './play-list.interface';
 export * from './play-list-item.interface';
 export * from './play-list-source.interface';
+export * from './requestor-info.interface';
 export * from './role.interface';
 export * from './select-item.interface';
 export * from './settings.interface';
