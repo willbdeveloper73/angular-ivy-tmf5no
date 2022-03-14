@@ -16,7 +16,7 @@ export const rawRawCategory: Partial<Category>[] = [
   {
     id: 1,
     name: 'Developer',
-    description: 'No…we\'re not teaching you how to become a software Developer.  However, these courses will give you knowledge of our standards and workflows.',
+    description: 'No…we\'re not teaching you how to become a Software Developer.  However, these courses will give you knowledge of our standards and workflows.',
     image:
       'https://s3.envato.com/files/3c53ef5b-f3d4-49e0-82bd-376915ff94b6/inline_image_preview.jpg',
   },
