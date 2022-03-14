@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { BaseForm } from './base-form.service';
-import { Course } from '../models';
+import { Course } from '../../shared-types';
 
 import { convertDate } from './utils';
 
