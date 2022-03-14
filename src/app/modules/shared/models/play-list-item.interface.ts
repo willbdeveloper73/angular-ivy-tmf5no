@@ -3,11 +3,11 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Status } from '../../shared-types';
 import { BaseName } from './base-name.interface';
 import { FormTableElement } from './form-table-element.interface';
 import { PlayListSource } from './play-list-source.interface';
 import { User } from './user.interface';
-import { Status } from './status.interface';
 import { convertDate } from './utils';
 
 export interface PlayListItem extends BaseName {
