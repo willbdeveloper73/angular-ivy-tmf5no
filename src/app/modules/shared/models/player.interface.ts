@@ -1,5 +1,5 @@
 import { BaseName } from './base-name.interface';
-import { Course } from './course.interface';
+import { Course } from '../../shared-types';
 import { User } from './user.interface';
 import { PlayList } from './play-list.interface';
 import { PlayListItem } from './play-list-item.interface';
