@@ -1,4 +1,4 @@
-export * from './api-service.interface';
+// export * from './api-service.interface';
 // export * from './base-id.interface';
 // export * from './base-name.interface';
 // export * from './category.interface';
