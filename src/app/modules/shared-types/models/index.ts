@@ -4,6 +4,7 @@ export * from './category.interface';
 export * from './course.interface';
 export * from './enrollment.interface';
 // export * from './form-table-element.interface';
+export * from './maintenance-log.interface';
 export * from './navbar-item.interface';
 // export * from './play-list.interface';
 export * from './play-list-item.interface';
