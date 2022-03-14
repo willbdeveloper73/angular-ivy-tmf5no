@@ -1,11 +1,9 @@
 import {
   Course,
   Category,
+  Enrollment,
 } from '../../shared-types';
 import {
-//   Course,
-//   Category,
-  Enrollment,
   PlayList,
   PlayListItem,
   PlayListSource,
