@@ -1,5 +1,5 @@
 import { BaseName } from './base-name.interface';
-import { CourseCategory } from './course-category.interface';
+import { Category } from './category.interface';
 import { FormTableElement } from './form-table-element.interface';
 import { PlayList } from './play-list.interface';
 import { Status } from './status.interface';
@@ -20,7 +20,7 @@ export interface Course extends BaseName {
   rating?: number;
 
   tags?: Partial<Tag>[];
-  categories?: Partial<CourseCategory>[];
+  categories?: Partial<Category>[];
   playlist?: Partial<PlayList>;
   status?: Partial<Status>;
 }
