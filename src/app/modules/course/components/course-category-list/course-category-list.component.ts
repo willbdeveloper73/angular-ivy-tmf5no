@@ -4,6 +4,9 @@ import { Subject } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 import {
   Category,
+} from '../../../shared-types';
+import {
+//   Category,
   CategoryService,
   CourseService,
   TitleBarService,
