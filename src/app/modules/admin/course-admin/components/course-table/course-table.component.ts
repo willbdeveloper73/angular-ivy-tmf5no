@@ -3,6 +3,10 @@ import { Router } from '@angular/router';
 import {
   Course,
   CourseElements,
+  CourseAdminFilter,
+} from '../../../../shared-types';
+
+import {
   CrudService,
   CourseService,
 } from '../../../../shared';
@@ -12,17 +16,6 @@ import {
   templateUrl: './course-table.component.html',
 })
 export class CourseTableComponent implements OnInit {
-  filterColumns = [
-    {
-      name: 'name',
-    },
-    {
-      name: 'statusId',
-    },
-    {
-      name: 'subject',
-    },
-  ];
   constructor(
     public service: CourseService,
     @Inject('COLUMNS') public columns: any,
