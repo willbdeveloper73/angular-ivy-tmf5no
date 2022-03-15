@@ -1,23 +1,10 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnInit,
-} from '@angular/core';
-import { CategoryService } from '../../../shared';
+import { Component, Input, OnInit } from '@angular/core';
+import { Category } from '../../../shared-types';
 
 @Component({
   selector: 'app-category-panel',
   templateUrl: './category-panel.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [CategoryService],
 })
-export class CategoryPanelComponent implements OnInit {
-  @Input() categoryId: number = 0;
-
-  constructor(public categoryService: CategoryService) {}
-
-  ngOnInit() {
-    this.categoryService.get(this.categoryId);
-  }
+export class CategoryPanelComponent {
+  @Input() category: Partial<Category> = {};
 }

@@ -10,4 +10,4 @@
 </div>
 -->
 
-<app-category-panel [categoryId]="categoryId"></app-category-panel>
+<app-category-panel [category]="service.item$ | async"></app-category-panel>
