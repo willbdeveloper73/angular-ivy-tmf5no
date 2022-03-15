@@ -5,7 +5,7 @@ import { ChipComponent } from './chip';
 import { PaginationComponent } from './pagination';
 import { RatingStarsComponent } from './rating-stars';
 import { TabComponent } from './tab';
-import { TableComponent } from './table';
+// import { TableComponent } from './table';
 import { ToggleComponent } from './toggle';
 import { UserAvatarComponent } from './user-avatar';
 // import { UserProfileSummaryComponent } from './user-profile-summary';
@@ -19,7 +19,7 @@ export const ComponentsExport = [
   PaginationComponent,
   RatingStarsComponent,
   TabComponent,
-  TableComponent,
+  // TableComponent,
   UserAvatarComponent,
   // UserProfileSummaryComponent,
 ];
