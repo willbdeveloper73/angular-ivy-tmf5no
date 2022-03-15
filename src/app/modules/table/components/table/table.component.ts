@@ -7,10 +7,10 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
-import { map, takeUntil, tap } from 'rxjs/operators';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { map, takeUntil } from 'rxjs/operators';
 import { FormTableElement, Pagination } from '../../../shared-types';
-import { PlayListService, StatusService, UserService } from '../../services';
+import { PlayListService, StatusService, UserService } from '../../../shared';
 
 @Component({
   selector: 'app-table',

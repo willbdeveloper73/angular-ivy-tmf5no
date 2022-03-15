@@ -1,8 +1,8 @@
-import { ButtonAddComponent } from './button-add';
-import { ButtonEditComponent } from './button-edit';
-import { ButtonDeleteComponent } from './button-delete';
+// import { ButtonAddComponent } from './button-add';
+// import { ButtonEditComponent } from './button-edit';
+// import { ButtonDeleteComponent } from './button-delete';
 import { ChipComponent } from './chip';
-import { PaginationComponent } from './pagination';
+// import { PaginationComponent } from './pagination';
 import { RatingStarsComponent } from './rating-stars';
 import { TabComponent } from './tab';
 // import { TableComponent } from './table';
@@ -12,11 +12,11 @@ import { UserAvatarComponent } from './user-avatar';
 
 export const ComponentsExport = [
   ToggleComponent,
-  ButtonAddComponent,
-  ButtonEditComponent,
-  ButtonDeleteComponent,
+  // ButtonAddComponent,
+  // ButtonEditComponent,
+  // ButtonDeleteComponent,
   ChipComponent,
-  PaginationComponent,
+  // PaginationComponent,
   RatingStarsComponent,
   TabComponent,
   // TableComponent,
