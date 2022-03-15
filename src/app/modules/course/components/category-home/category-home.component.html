@@ -1,0 +1,4 @@
+<app-category-panel
+  *ngFor="let category of categoryService.items$ | async"
+  [categoryId]="category.id"
+></app-category-panel>

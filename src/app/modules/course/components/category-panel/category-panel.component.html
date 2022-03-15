@@ -1,0 +1,12 @@
+<p>category-panel works!</p>
+
+<div *ngIf="categoryService.item$ | async as category">
+  <pre>{{category }}
+  <div>
+    <img src="category?.image" />
+  </div>
+  <app-course-card-small
+    *ngFor="let course of category.courses"
+    [course]="course"
+  ></app-course-card-small>
+</div>
