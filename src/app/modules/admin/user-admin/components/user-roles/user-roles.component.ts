@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User, Role, UserService, RoleService } from '../../../../shared';
+import { User, Role } from '../../../../shared-types';
+import { UserService, RoleService } from '../../../../shared';
 
 @Component({
   selector: 'app-user-roles',

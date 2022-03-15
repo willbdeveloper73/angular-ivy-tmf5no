@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PlayListSource, PlayListSourceService } from '../../../../../shared';
+import { PlayListSource } from '../../../../../shared-types';
+import { PlayListSourceService } from '../../../../../shared';
 
 @Component({
   selector: 'app-playlists-source-table',

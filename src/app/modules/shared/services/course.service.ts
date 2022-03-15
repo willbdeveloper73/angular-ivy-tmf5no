@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { combineLatest, Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { Course, CourseListMeta, Category, Tag } from '../../shared-types';
 import { CrudService } from './crud.service';
 import { rawCourses } from './rawData';
-import { Course, CourseCategory, CourseListMeta, Tag } from '../models';
 
 @Injectable({ providedIn: 'root' })
 export class CourseService extends CrudService<Course> {
@@ -46,7 +46,7 @@ export class CourseService extends CrudService<Course> {
   getAllForCategory(categoryId: number) {
     const items = this._items.filter((item) =>
       item.categories.some(
-        (category: Partial<CourseCategory>) => category.id === categoryId
+        (category: Partial<Category>) => category.id === categoryId
       )
     );
     this.items.next(items.sort(this.asc));

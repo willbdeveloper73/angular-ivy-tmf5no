@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { ApiService } from '../models/api-service.interface';
-import { BaseName } from '../models/base-name.interface';
+import { ApiService, BaseName } from '../../shared-types';
 import { PaginationService } from './pagination.service';
 
 @Injectable()

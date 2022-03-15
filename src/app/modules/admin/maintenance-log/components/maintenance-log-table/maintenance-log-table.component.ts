@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MaintenanceLog, MaintenanceLogService } from '../../../../shared';
+import { MaintenanceLog } from '../../../../shared-types';
+import { MaintenanceLogService } from '../../../../shared';
 
 @Component({
   selector: 'app-maintenance-log-table',

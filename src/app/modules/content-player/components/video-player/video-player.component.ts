@@ -2,19 +2,21 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { combineLatest, Subject } from 'rxjs';
 import { map, take, takeUntil, tap } from 'rxjs/operators';
 import {
-  AuthenticatedUserService,
   Course,
-  CourseService,
+  PlayListItem,
   Player,
+  PlayListSource,
+  User,
+  Watched,
+} from '../../../shared-types';
+import {
+  AuthenticatedUserService,
+  CourseService,
   PlayerService,
   PlayListService,
   PlayListItemService,
   PlayListSourceService,
-  PlayListItem,
-  PlayListSource,
-  User,
   WatchedService,
-  Watched,
 } from '../../../shared';
 
 @Component({

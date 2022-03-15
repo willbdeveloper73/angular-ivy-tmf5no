@@ -9,13 +9,15 @@ import {
 import { combineLatest, BehaviorSubject, Subject, Observable } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
 import {
+  PlayListItem,
+  User,
+  Watched,
+} from '../../../shared-types';
+import {
   AuthenticatedUserService,
   CourseService,
   PlayerService,
-  PlayListItem,
   PlayListItemService,
-  User,
-  Watched,
 } from '../../../shared';
 
 @Component({

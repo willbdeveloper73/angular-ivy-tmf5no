@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 import { map, takeUntil, tap } from 'rxjs/operators';
-import { FormTableElement, Pagination } from '../../models';
+import { FormTableElement, Pagination } from '../../../shared-types';
 import { PlayListService, StatusService, UserService } from '../../services';
 
 @Component({

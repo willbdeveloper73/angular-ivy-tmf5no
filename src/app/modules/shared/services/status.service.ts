@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Status } from '../models';
+import { Status } from '../../shared-types';
 import { CrudService } from './crud.service';
 import { rawStatus } from './rawData';
 

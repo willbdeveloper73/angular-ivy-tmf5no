@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AuthenticatedUserService, Enrollment } from '../../../shared';
-// import { Enrollment } from '../../../shared-types';
+import { Enrollment } from '../../../shared-types';
+import { AuthenticatedUserService} from '../../../shared';
 
 @Component({
   selector: 'app-user-info',

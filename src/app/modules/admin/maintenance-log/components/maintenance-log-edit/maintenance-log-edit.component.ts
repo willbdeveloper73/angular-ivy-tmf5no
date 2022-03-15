@@ -3,11 +3,8 @@ import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import {
-  MaintenanceLog,
-  MaintenanceLogForm,
-  MaintenanceLogService,
-} from '../../../../shared';
+import { MaintenanceLog } from '../../../../shared-types';
+import { MaintenanceLogForm, MaintenanceLogService } from '../../../../shared';
 
 @Component({
   selector: 'app-maintenance-log-edit',

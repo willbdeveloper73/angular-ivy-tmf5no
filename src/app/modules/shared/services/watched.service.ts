@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Watched } from '../models';
+import { Watched } from '../../shared-types';
 import { CrudService } from './crud.service';
 
 @Injectable({ providedIn: 'root' })

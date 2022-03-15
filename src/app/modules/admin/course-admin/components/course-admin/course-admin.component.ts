@@ -3,7 +3,8 @@ import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
-import { Course, CourseForm, CourseService } from '../../../../shared';
+import { Course } from '../../../../shared-types';
+import { CourseForm, CourseService } from '../../../../shared';
 
 @Component({
   selector: 'app-course',

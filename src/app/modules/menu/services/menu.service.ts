@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { NavbarItem } from '../../shared-types';
-import { CourseCategory, CourseCategoryService } from '../../shared';
+import { Category, NavbarItem } from '../../shared-types';
+import { CategoryService } from '../../shared';
 
 @Injectable({ providedIn: 'root' })
 export class MenuService {
@@ -166,7 +166,7 @@ export class MenuService {
     this.#mainMenuDropdown.asObservable();
   //#endregion
 
-  constructor(private categories: CourseCategoryService) {
+  constructor(private categories: CategoryService) {
     this.buildDropdownMenu();
   }
 
@@ -179,14 +179,14 @@ export class MenuService {
     this.#_mainMenuDropdown = this.#_mainMenu;
     this.categories.items$
       .pipe(
-        map((categories: Partial<CourseCategory>[]) => {
+        map((categories: Partial<Category>[]) => {
           const categoryListings: Partial<NavbarItem>[] = [
             {
               link: '/course',
               text: 'All Courses',
             },
           ];
-          categories?.map((category: Partial<CourseCategory>): void => {
+          categories?.map((category: Partial<Category>): void => {
             const item: Partial<NavbarItem> = {
               link: `/course/category/${category.id}`,
               text: category.name,

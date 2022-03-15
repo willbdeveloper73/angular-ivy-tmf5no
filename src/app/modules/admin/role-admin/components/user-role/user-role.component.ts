@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Role, User, UserService } from '../../../../shared';
+import { Role, User } from '../../../../shared-types';
+import { UserService } from '../../../../shared';
 
 @Component({
   selector: 'app-user-role',
@@ -16,7 +17,4 @@ export class UserRoleComponent implements OnInit {
 
   checkRole = (roles: Partial<Role>[]): boolean =>
     !!roles.find((role: Partial<Role>) => role.name === this.role) || false;
-  // console.log('checking for:', { roles, role: this.role, found });
-  // return found;
-  // return found ? 'check' : 'minus';
 }

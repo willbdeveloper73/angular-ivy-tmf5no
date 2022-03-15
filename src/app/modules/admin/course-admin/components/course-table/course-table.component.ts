@@ -3,6 +3,10 @@ import { Router } from '@angular/router';
 import {
   Course,
   CourseElements,
+  CourseAdminFilter,
+} from '../../../../shared-types';
+
+import {
   CrudService,
   CourseService,
 } from '../../../../shared';

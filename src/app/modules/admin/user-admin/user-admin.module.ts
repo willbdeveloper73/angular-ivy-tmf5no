@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { SharedModule, UserElements, UserForm } from '../../shared';
+import { UserElements } from '../../shared-types';
+import { SharedModule, UserForm } from '../../shared';
 import { FormModule } from '../../form';
 import { UserAdminRoutingModule } from './user-admin-routing.module';
 import { Components, ComponentsExport } from './components';

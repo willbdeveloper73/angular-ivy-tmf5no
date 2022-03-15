@@ -3,11 +3,8 @@ import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import {
-  CourseRequest,
-  CourseRequestForm,
-  CourseRequestService,
-} from '../../../../shared';
+import { CourseRequest } from '../../../../shared-types';
+import { CourseRequestForm, CourseRequestService } from '../../../../shared';
 
 @Component({
   selector: 'app-courses-requested-edit',

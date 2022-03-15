@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
-import {
-  SharedModule,
-  CourseRequestElements,
-  CourseRequestForm,
-} from '../../shared';
+import { CourseRequestElements } from '../../shared-types';
+import { SharedModule, CourseRequestForm } from '../../shared';
 import { FormModule } from '../../form';
 import { CoursesRequestedRoutingModule } from './courses-requested-routing.module';
 import { Components, ComponentsExport } from './components';

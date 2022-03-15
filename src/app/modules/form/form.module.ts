@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RequestorInfoElements } from '../shared-types';
 import { Components, ComponentsExport } from './components';
-import { RequestorInfoElements } from '../shared';
 
 const ModulesExport = [FormsModule, ReactiveFormsModule];
 @NgModule({

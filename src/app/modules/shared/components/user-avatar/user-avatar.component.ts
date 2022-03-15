@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { AuthenticatedUserService } from '../../services';
-import { User } from '../../models';
+import { User } from '../../../shared-types';
 
 @Component({
   selector: 'app-user-avatar',

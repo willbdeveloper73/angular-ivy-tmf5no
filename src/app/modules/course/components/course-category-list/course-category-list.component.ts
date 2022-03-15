@@ -3,8 +3,11 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 import {
-  CourseCategory,
-  CourseCategoryService,
+  Category,
+} from '../../../shared-types';
+import {
+//   Category,
+  CategoryService,
   CourseService,
   TitleBarService,
 } from '../../../shared';
@@ -18,7 +21,7 @@ export class CourseCategoryListComponent implements OnInit, OnDestroy {
   constructor(
     public route: ActivatedRoute,
     public service: CourseService,
-    public categoryService: CourseCategoryService,
+    public categoryService: CategoryService,
     public titlebarService: TitleBarService
   ) {}
 

@@ -1,11 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {
-  CourseRequest,
-  CourseElements,
-  CrudService,
-  CourseRequestService,
-} from '../../../../shared';
+import { CourseRequest } from '../../../../shared-types';
+import { CourseRequestService } from '../../../../shared';
 
 @Component({
   selector: 'app-courses-requested-table',

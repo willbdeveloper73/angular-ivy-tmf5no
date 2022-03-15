@@ -1,6 +1,6 @@
 import {
+  Category,
   Course,
-  CourseCategory,
   Enrollment,
   PlayList,
   PlayListItem,
@@ -9,40 +9,44 @@ import {
   Status,
   Tag,
   User,
-} from '../models';
+} from '../../shared-types';
 
-//#region RawCourseCategory
-export const rawRawCourseCategory: Partial<CourseCategory>[] = [
+//#region RawCategory
+export const rawRawCategory: Partial<Category>[] = [
   {
     id: 1,
     name: 'Developer',
+    description: 'No…we\'re not teaching you how to become a Software Developer.  However, these courses will give you knowledge of our standards and workflows.',
     image:
       'https://s3.envato.com/files/3c53ef5b-f3d4-49e0-82bd-376915ff94b6/inline_image_preview.jpg',
   },
   {
     id: 2,
     name: 'System Admin',
+    description: 'These courses will allow the team member to become more familiar with our standards and workflows.',
     image:
       'https://i1.wp.com/jobs365.co.za/wp-content/uploads/2019/07/SYSTEM-ADMINISTRATOR.jpg?fit=1200%2C798&ssl=1',
   },
   {
     id: 3,
     name: 'Network Admin',
+    description: 'These courses will allow the team member to become more familiar with our standards and workflows.',
     image:
       'https://www.earnmydegree.com/sites/all/files/public/images/shutterstock_329986208.jpg',
   },
   {
     id: 4,
     name: 'Site Lead',
+    description: 'These courses will allow the team member to become more familiar with our standards and workflows.',
     image:
       'https://heritageofficesuites.com/wp-content/uploads/2017/05/Meeting-Room-Image-19.jpg',
   },
 ];
 
-export const getRawRawCourseCategory = (
+export const getRawRawCategory = (
   categoryId: number
-): Partial<CourseCategory> =>
-  rawRawCourseCategory.find((category) => category.id === categoryId);
+): Partial<Category> =>
+  rawRawCategory.find((category) => category.id === categoryId);
 //#endregion
 
 //#region RawStatus
@@ -597,25 +601,25 @@ const buildPlaylist = (playlistId: number) => ({
 export const rawCourses: Partial<Course>[] = [
   {
     ...getRawRawCourse(1),
-    categories: [getRawRawCourseCategory(1)],
+    categories: [getRawRawCategory(1)],
     tags: [getRawRawTag(1)],
     ...buildPlaylist(1),
   },
   {
     ...getRawRawCourse(2),
-    categories: [getRawRawCourseCategory(1), getRawRawCourseCategory(2)],
+    categories: [getRawRawCategory(1), getRawRawCategory(2)],
     tags: [getRawRawTag(1)],
     ...buildPlaylist(2),
   },
   {
     ...getRawRawCourse(3),
-    categories: [getRawRawCourseCategory(3)],
+    categories: [getRawRawCategory(3)],
     tags: [getRawRawTag(3)],
     ...buildPlaylist(2),
   },
   {
     ...getRawRawCourse(4),
-    categories: [getRawRawCourseCategory(4)],
+    categories: [getRawRawCategory(4)],
     tags: [getRawRawTag(4)],
     ...buildPlaylist(3),
   },
@@ -637,21 +641,21 @@ export const getRawTag = (tagId: number): Partial<Tag> =>
   rawTags.find((tag) => tag.id === tagId);
 //#endregion
 
-//#region CourseCategory
-export const rawCourseCategory: Partial<CourseCategory>[] = [
+//#region Category
+export const rawCategory: Partial<Category>[] = [
   {
-    ...getRawRawCourseCategory(1),
+    ...getRawRawCategory(1),
     courses: [getRawCourse(1), getRawCourse(2)],
   },
-  { ...getRawRawCourseCategory(2), courses: [getRawCourse(2)] },
-  { ...getRawRawCourseCategory(3), courses: [getRawCourse(3)] },
-  { ...getRawRawCourseCategory(4), courses: [getRawCourse(4)] },
+  { ...getRawRawCategory(2), courses: [getRawCourse(2)] },
+  { ...getRawRawCategory(3), courses: [getRawCourse(3)] },
+  { ...getRawRawCategory(4), courses: [getRawCourse(4)] },
 ];
 
-export const getRawCourseCategory = (
+export const getRawCategory = (
   categoryId: number
-): Partial<CourseCategory> =>
-  rawCourseCategory.find((category) => category.id === categoryId);
+): Partial<Category> =>
+  rawCategory.find((category) => category.id === categoryId);
 //#endregion
 
 //#region Enrollments

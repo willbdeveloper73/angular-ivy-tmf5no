@@ -1,20 +1,99 @@
 import { BaseName } from './base-name.interface';
+import { FormTableElement } from './form-table-element.interface';
 import { PlayListItem } from './play-list-item.interface';
 import { Tag } from './tag.interface';
+import { User } from './user.interface';
 
 export interface PlayListSource extends BaseName {
-  // id?: number;
   seq?: number;
-  // name?: string;
   description?: string;
   url?: string;
   mimeType?: string;
   thumbnail?: string;
+  duration?: number;
   statusId?: number;
   createdAt?: Date;
-  updateAt?: Date;
+  updatedAt?: Date;
   deletedAt?: Date;
-  author?: string;
+  authorId?: number;
   tags?: Tag[];
   items?: Partial<PlayListItem>[];
+  author?: Partial<User>;
 }
+
+export const PlayListSourceElements: Partial<FormTableElement>[] = [
+  {
+    name: 'name',
+    label: 'Source Name',
+    type: 'text',
+    required: true,
+    tableDisplay: true,
+  },
+  {
+    name: 'seq',
+    label: 'Sequence',
+    type: 'text',
+    tableDisplay: true,
+  },
+  {
+    name: 'statusId',
+    label: 'Status',
+    type: 'select',
+    options: [],
+    data: (row: Partial<PlayListItem>) => null,
+    tableDisplay: true,
+  },
+  {
+    name: 'authorId',
+    label: 'Author',
+    type: 'select',
+    options: [],
+    data: (row: Partial<PlayListItem>) => null,
+    tableDisplay: true,
+  },
+  {
+    name: 'description',
+    label: 'Description',
+    type: 'textarea',
+    tableDisplay: true,
+  },
+  {
+    name: 'url',
+    label: 'Url',
+    type: 'text',
+    tableDisplay: true,
+  },
+  {
+    name: 'mimeType',
+    label: 'Mime/Type',
+    type: 'text',
+    tableDisplay: true,
+  },
+  {
+    name: 'thumbnail',
+    label: 'Thumbnail',
+    type: 'text',
+    tableDisplay: true,
+  },
+  {
+    name: 'createdAt',
+    label: 'Date Created',
+    type: 'date',
+    dateFormat: 'yyyy-MM-dd',
+    tableDisplay: true,
+  },
+  {
+    name: 'updatedAt',
+    label: 'Date Updated',
+    type: 'date',
+    dateFormat: 'yyyy-MM-dd',
+    tableDisplay: true,
+  },
+  {
+    name: 'deletedAt',
+    label: 'Date Deleted',
+    type: 'date',
+    dateFormat: 'yyyy-MM-dd',
+    tableDisplay: false,
+  },
+];

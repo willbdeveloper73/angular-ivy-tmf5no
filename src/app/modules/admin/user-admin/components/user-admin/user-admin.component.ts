@@ -3,13 +3,8 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { map, takeUntil, tap } from 'rxjs/operators';
-import {
-  CrudService,
-  User,
-  UserService,
-  UserElements,
-  UserForm,
-} from '../../../../shared';
+import { User, UserElements } from '../../../../shared-types';
+import { CrudService, UserService, UserForm } from '../../../../shared';
 
 @Component({
   selector: 'app-user-admin',

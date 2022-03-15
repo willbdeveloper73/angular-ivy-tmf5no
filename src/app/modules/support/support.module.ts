@@ -2,11 +2,9 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared';
 import { SupportRoutingModule } from './support-routing.module';
 import { Components, ComponentsExport } from './components';
-
+import { CourseRequestElements, MaintenanceLogElements } from '../shared-types';
 import {
   CourseRequestForm,
-  CourseRequestElements,
-  MaintenanceLogElements,
   MaintenanceLogForm,
   RequestorInfoForm,
 } from '../shared';

@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User, UserElements, UserService } from '../../../../shared';
-// import { User, UserElements } from '../../../../shared-types';
+import { User, UserElements } from '../../../../shared-types';
+import { UserService } from '../../../../shared';
 
 @Component({
   selector: 'app-user-table',

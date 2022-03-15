@@ -3,10 +3,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { PlayListItem, Tag } from '../../shared-types';
 import { BaseName } from './base-name.interface';
 import { FormTableElement } from './form-table-element.interface';
-import { PlayListItem } from './play-list-item.interface';
-import { Tag } from './tag.interface';
 import { User } from './user.interface';
 import { convertDate } from './utils';
 

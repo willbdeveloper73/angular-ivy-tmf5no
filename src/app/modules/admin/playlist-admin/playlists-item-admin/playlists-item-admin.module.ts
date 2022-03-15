@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
-import {
-  SharedModule,
-  PlayListItemForm,
-  PlayListItemElements,
-} from '../../../shared';
+import { PlayListItemElements } from '../../../shared-types';
+import { SharedModule, PlayListItemForm } from '../../../shared';
 import { FormModule } from '../../../form';
 import { PlaylistsItemAdminRoutingModule } from './playlists-item-admin-routing.module';
 import { Components, ComponentsExport } from './components';

@@ -10,9 +10,8 @@ import {
 
 import { Observable, of, forkJoin } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
-// import { TitleBarService } from '../services/title-bar.service';
-import { CourseCategory } from '../models';
-import { CourseCategoryService, TitleBarService } from '../services';
+import { Category } from '../../shared-types';
+import { CategoryService, TitleBarService } from '../services';
 
 @Injectable({ providedIn: 'root' })
 export class PageTitleResolver implements Resolve<{ any }> {
@@ -20,7 +19,7 @@ export class PageTitleResolver implements Resolve<{ any }> {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private titleService: TitleBarService,
-    private categoryService: CourseCategoryService
+    private categoryService: CategoryService
   ) {}
 
   resolve(
@@ -36,26 +35,12 @@ export class PageTitleResolver implements Resolve<{ any }> {
         if (categoryId) {
           this.categoryService.get(categoryId);
           this.categoryService.item$.subscribe(
-            (category: Partial<CourseCategory>) =>
+            (category: Partial<Category>) =>
               this.titleService.setTitle(`${category.name} Courses`)
           );
         }
       }
     }
-    // this.router.events
-    //   .pipe(
-    //     filter((event) => event instanceof NavigationEnd),
-    //     map(() => {
-    //       const child = this.activatedRoute.firstChild;
-    //       if (child.snapshot.data['title']) {
-    //         return child.snapshot.data['title'];
-    //       }
-    //       return '';
-    //     })
-    //   )
-    //   .subscribe((ttl: string) => {
-    //     this.titleService.setTitle(ttl);
-    //   });
     return of(null);
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { rawEnrollments, getRawCourse } from './rawData';
-import { Enrollment } from '../models';
+import { Enrollment } from '../../shared-types';
 import { CrudService } from './crud.service';
 import { AuthenticatedUserService } from './authenticated-user.service';
 import { CourseService } from './course.service';
