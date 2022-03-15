@@ -35,6 +35,12 @@ export class TableComponent implements OnInit, OnDestroy {
   columns$: Observable<Partial<FormTableElement>[]> =
     this.#columns.asObservable();
 
+  actions: Partial<FormTableElement> = {
+    name: 'Actions',
+    tableDisplay: true,
+    display: true,
+  };
+
   constructor(
     private statusService: StatusService,
     private playlistService: PlayListService,
@@ -42,6 +48,7 @@ export class TableComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
+    this.columns = [...this.element, this.actions];
     this.#columns.next(this.columns);
 
     this.checkService({
