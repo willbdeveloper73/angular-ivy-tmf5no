@@ -1,9 +1,15 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { CategoryService } from '../../../shared';
 
 @Component({
   selector: 'app-category-panel',
   templateUrl: './category-panel.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [CategoryService],
 })
 export class CategoryPanelComponent implements OnInit {
