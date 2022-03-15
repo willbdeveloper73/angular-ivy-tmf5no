@@ -15,7 +15,7 @@ import { PlayListService, StatusService, UserService } from '../../../shared';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TableComponent implements OnInit, OnDestroy {
   @Input() columns: Partial<FormTableElement>[] = [];
@@ -35,12 +35,6 @@ export class TableComponent implements OnInit, OnDestroy {
   columns$: Observable<Partial<FormTableElement>[]> =
     this.#columns.asObservable();
 
-  actions: Partial<FormTableElement> = {
-    name: 'Actions',
-    tableDisplay: true,
-    display: true,
-  };
-
   constructor(
     private statusService: StatusService,
     private playlistService: PlayListService,
@@ -48,7 +42,16 @@ export class TableComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.columns = [...this.element, this.actions];
+    this.columns = [
+      ...this.columns,
+      {
+        label: 'Actions',
+        tableDisplay: true,
+        display: true,
+      },
+    ];
+
+    console.log('this.columns:', this.columns);
     this.#columns.next(this.columns);
 
     this.checkService({
