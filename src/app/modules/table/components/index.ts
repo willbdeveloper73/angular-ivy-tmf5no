@@ -3,6 +3,7 @@ import { ButtonEditComponent } from './button-edit';
 import { ButtonDeleteComponent } from './button-delete';
 import { PaginationComponent } from './pagination';
 import { TableComponent } from './table';
+import { TableHeaderComponent } from './table-header';
 
 export const ComponentsExport = [TableComponent];
 
@@ -12,4 +13,5 @@ export const Components = [
   ButtonEditComponent,
   ButtonDeleteComponent,
   PaginationComponent,
+  TableHeaderComponent,
 ];

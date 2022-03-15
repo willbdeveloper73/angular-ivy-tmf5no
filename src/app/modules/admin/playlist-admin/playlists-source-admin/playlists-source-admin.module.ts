@@ -1,14 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PlayListSourceElements } from '../../../shared-types';
-import { PlayListSourceForm } from '../../../shared';
+import { SharedModulePlayListSourceForm } from '../../../shared';
 import { TableModule } from '../../../table';
 import { FormModule } from '../../../form';
 import { PlaylistsSourceAdminRoutingModule } from './playlists-source-admin-routing.module';
 import { Components, ComponentsExport } from './components';
 
 @NgModule({
-  imports: [SharedModule, FormModule, PlaylistsSourceAdminRoutingModule],
+  imports: [
+    CommonModule,
+    TableModule,
+    FormModule,
+    PlaylistsSourceAdminRoutingModule,
+  ],
   declarations: [...Components],
   exports: [...ComponentsExport],
   providers: [

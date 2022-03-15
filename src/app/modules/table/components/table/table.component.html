@@ -9,11 +9,17 @@
     <div class="overflow-x-auto">
       <div class="inline-block min-w-full py-2">
         <div class="overflow-hidden">
-          <table class="min-w-full bg-white divide-y divide-gray-200 table-fixed">
+          <table
+            class="min-w-full bg-white divide-y divide-gray-200 table-fixed"
+          >
             <thead class="border-b">
               <tr>
                 <ng-container *ngFor="let column of columns$ | async">
-                  <th
+                  <app-table-header
+                    [element]="column"
+                    [data]="data"
+                  ></app-table-header>
+                  <!-- <th
                     scope="col"
                     class="
                       px-6
@@ -25,7 +31,7 @@
                     *ngIf="column.tableDisplay"
                   >
                     {{ column.label }}
-                  </th>
+                  </th> -->
                 </ng-container>
                 <th
                   scope="col"
@@ -43,7 +49,14 @@
                 </th>
               </tr>
             </thead>
-            <tbody class="bg-grey-light overflow-y-scroll h-1/5 divide-y divide-gray-200">
+            <tbody
+              class="
+                bg-grey-light
+                overflow-y-scroll
+                h-1/5
+                divide-y divide-gray-200
+              "
+            >
               <!-- style="height: 20vh" -->
               <tr
                 *ngFor="let row of data; index as i"

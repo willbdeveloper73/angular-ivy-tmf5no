@@ -34,11 +34,6 @@ export class PaginationComponent {
   }
 
   public get pageRange() {
-    console.log('page:', this.pagination.page);
-    console.log('firstPage:', this.firstPage);
-    console.log('lastPage:', this.lastPage);
-    const range = this.range(this.firstPage, this.lastPage);
-    console.log('range:', range);
-    return [...range];
+    return [...this.range(this.firstPage, this.lastPage)];
   }
 }
