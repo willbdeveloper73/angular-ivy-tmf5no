@@ -1,0 +1,18 @@
+<ng-container *ngIf="category">
+  <div class="p-3 w-2/3 flex flex-col overflow-hidden">
+    <!-- <pre>{{ category | json }}</pre> -->
+    <div class="flex flex-col items-baseline">
+      <img class="h-48 scale-75" [src]="category?.image" />
+      <div class="w-full">
+        <div class="font-bold">{{ category?.name }}</div>
+        <div class="">{{ category?.description | truncate: 100 }}</div>
+      </div>
+    </div>
+    <div class="bg-white border flex flex-row">
+      <app-course-card-small
+        *ngFor="let course of category.courses"
+        [course]="course"
+      ></app-course-card-small>
+    </div>
+  </div>
+</ng-container>

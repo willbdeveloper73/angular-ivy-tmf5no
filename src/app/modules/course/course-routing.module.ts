@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageTitleResolver } from '../shared';
 import {
   LayoutComponent,
+  CategoryHomeComponent,
   CoursesAvailableComponent,
   CourseCategoryListComponent,
   // CourseDetailComponent,
@@ -17,7 +18,8 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: CoursesAvailableComponent,
+        component: CategoryHomeComponent,
+        // component: CoursesAvailableComponent,
         data: { title: 'All Courses' },
         resolve: { pageData: PageTitleResolver },
       },
