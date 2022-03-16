@@ -27,6 +27,34 @@ export class TableComponent implements OnInit, OnDestroy {
   @Output() edit: EventEmitter<unknown> = new EventEmitter<unknown>();
   @Output() delete: EventEmitter<unknown> = new EventEmitter<unknown>();
 
+  headers = (): Partial<FormTableElement>[] => {
+    const columnHeaders: Partial<FormTableElement>[] = this.columns
+      .filter((column: Partial<FormTableElement>) => column.tableDisplay)
+      .map((column: Partial<FormTableElement>) => ({
+        label: column.label,
+        tableDisplay: column.tableDisplay,
+        display: column.display || column.tableDisplay,
+      }));
+    return [
+      ...columnHeaders,
+      {
+        label: 'Actions',
+        tableDisplay: true,
+        display: true,
+      },
+    ];
+  };
+
+  dataColumns = () =>
+    this.columns.filter(
+      (column: Partial<FormTableElement>) => column.tableDisplay
+    );
+
+  display = (label: string): boolean =>
+    this.headers().find(
+      (header: Partial<FormTableElement>) => header.label === label
+    ).display;
+
   destroy$: Subject<boolean> = new Subject<boolean>();
 
   #columns: BehaviorSubject<Partial<FormTableElement>[]> = new BehaviorSubject<
@@ -42,16 +70,16 @@ export class TableComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.columns = [
-      ...this.columns,
-      {
-        label: 'Actions',
-        tableDisplay: true,
-        display: true,
-      },
-    ];
+    // this.columns = [
+    //   ...this.columns,
+    //   {
+    //     label: 'Actions',
+    //     tableDisplay: true,
+    //     display: true,
+    //   },
+    // ];
 
-    console.log('this.columns:', this.columns);
+    // console.log('this.columns:', this.columns);
     this.#columns.next(this.columns);
 
     this.checkService({

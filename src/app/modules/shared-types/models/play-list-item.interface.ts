@@ -27,6 +27,7 @@ export const PlayListItemElements: Partial<FormTableElement>[] = [
     // data: (row: Partial<PlayListItem>) => row.name,
     required: true,
     tableDisplay: true,
+    display: true,
   },
   {
     name: 'statusId',
@@ -35,6 +36,7 @@ export const PlayListItemElements: Partial<FormTableElement>[] = [
     options: [],
     data: (row: Partial<PlayListItem>) => null,
     tableDisplay: true,
+    display: true,
   },
   {
     name: 'authorId',
@@ -43,6 +45,7 @@ export const PlayListItemElements: Partial<FormTableElement>[] = [
     options: [],
     data: (row: Partial<PlayListItem>) => null,
     tableDisplay: true,
+    display: true,
   },
   {
     name: 'description',
@@ -50,6 +53,7 @@ export const PlayListItemElements: Partial<FormTableElement>[] = [
     type: 'textarea',
     // data: (row: Partial<PlayListItem>) => row.description,
     tableDisplay: true,
+    display: true,
   },
   {
     name: 'seq',
@@ -57,6 +61,7 @@ export const PlayListItemElements: Partial<FormTableElement>[] = [
     type: 'text',
     // data: (row: Partial<PlayListItem>) => row.seq,
     tableDisplay: true,
+    display: true,
   },
   {
     name: 'createdAt',
@@ -64,6 +69,7 @@ export const PlayListItemElements: Partial<FormTableElement>[] = [
     type: 'date',
     dateFormat: 'yyyy-MM-dd',
     tableDisplay: true,
+    display: true,
   },
   {
     name: 'updatedAt',
@@ -71,6 +77,7 @@ export const PlayListItemElements: Partial<FormTableElement>[] = [
     type: 'date',
     dateFormat: 'yyyy-MM-dd',
     tableDisplay: true,
+    display: true,
   },
   {
     name: 'deletedAt',
@@ -78,6 +85,7 @@ export const PlayListItemElements: Partial<FormTableElement>[] = [
     type: 'date',
     dateFormat: 'yyyy-MM-dd',
     tableDisplay: false,
+    display: false,
   },
   {
     name: 'duration',
@@ -85,6 +93,7 @@ export const PlayListItemElements: Partial<FormTableElement>[] = [
     type: 'text',
     // data: (row: Partial<PlayListItem>) => row.duration,
     tableDisplay: false,
+    display: false,
   },
   {
     name: 'watched',
@@ -92,5 +101,6 @@ export const PlayListItemElements: Partial<FormTableElement>[] = [
     type: 'text',
     // data: (row: Partial<PlayListItem>) => row.watched,
     tableDisplay: false,
+    display: false,
   },
 ];

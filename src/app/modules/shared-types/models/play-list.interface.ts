@@ -13,7 +13,7 @@ export interface PlayList extends BaseName {
   thumbnail?: string;
   duration?: number;
   statusId?: number;
-//   isDeleted?: boolean;
+  //   isDeleted?: boolean;
   createdAt?: Date;
   updatedAt?: Date;
   deletedAt?: Date;
@@ -59,12 +59,14 @@ export const PlayListElements: Partial<FormTableElement>[] = [
     type: 'text',
     required: true,
     tableDisplay: true,
+    display: true,
   },
   {
     name: 'description',
     label: 'Description',
     type: 'textarea',
     tableDisplay: true,
+    display: true,
   },
   {
     name: 'statusId',
@@ -72,12 +74,14 @@ export const PlayListElements: Partial<FormTableElement>[] = [
     type: 'select',
     data: (row: Partial<PlayList>) => null,
     tableDisplay: true,
+    display: true,
   },
   {
     name: 'thumbnail',
     label: 'Thumbnail',
     type: 'text',
     tableDisplay: true,
+    display: true,
   },
   {
     name: 'createdAt',
@@ -85,6 +89,7 @@ export const PlayListElements: Partial<FormTableElement>[] = [
     type: 'date',
     dateFormat: 'yyyy-MM-dd',
     tableDisplay: true,
+    display: true,
   },
   {
     name: 'updatedAt',
@@ -92,6 +97,7 @@ export const PlayListElements: Partial<FormTableElement>[] = [
     type: 'date',
     dateFormat: 'yyyy-MM-dd',
     tableDisplay: true,
+    display: true,
   },
   {
     name: 'deletedAt',
@@ -99,5 +105,6 @@ export const PlayListElements: Partial<FormTableElement>[] = [
     type: 'date',
     dateFormat: 'yyyy-MM-dd',
     tableDisplay: false,
+    display: false,
   },
 ];
