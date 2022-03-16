@@ -1,24 +1,20 @@
-<ng-container *ngIf="headers()">
+<ng-container *ngIf="headers">
   <div class="px-4 py-2 flex flex-row justify-end">
     <app-button-add (click)="add.emit()"></app-button-add>
   </div>
 
   <div class="px-14 py-2 flex flex-row justify-start">
-    <app-column-selector [columns]="headers()"></app-column-selector>
+    <app-column-selector [columns]="headers"></app-column-selector>
   </div>
 
   <div class="flex flex-col items-center justify-evenly">
-    <!-- <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-      <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8"> -->
     <div class="overflow-x-auto">
       <div class="inline-block min-w-full py-2">
         <div class="overflow-hidden">
-          <table
-            class="min-w-full bg-white divide-y divide-gray-200 table-fixed"
-          >
+          <table class="bg-white divide-y divide-gray-200 table-fixed">
             <thead class="border-b">
               <tr>
-                <ng-container *ngFor="let column of headers()">
+                <ng-container *ngFor="let column of headers">
                   <th
                     *ngIf="column.display"
                     scope="col"

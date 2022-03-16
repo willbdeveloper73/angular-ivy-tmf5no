@@ -27,23 +27,7 @@ export class TableComponent implements OnInit, OnDestroy {
   @Output() edit: EventEmitter<unknown> = new EventEmitter<unknown>();
   @Output() delete: EventEmitter<unknown> = new EventEmitter<unknown>();
 
-  headers = (): Partial<FormTableElement>[] => {
-    const columnHeaders: Partial<FormTableElement>[] = this.columns
-      .filter((column: Partial<FormTableElement>) => column.tableDisplay)
-      .map((column: Partial<FormTableElement>) => ({
-        label: column.label,
-        tableDisplay: column.tableDisplay,
-        display: column.display || column.tableDisplay,
-      }));
-    return [
-      ...columnHeaders,
-      {
-        label: 'Actions',
-        tableDisplay: true,
-        display: true,
-      },
-    ];
-  };
+  headers: Partial<FormTableElement>[] = [];
 
   dataColumns = () =>
     this.columns.filter(
@@ -51,7 +35,7 @@ export class TableComponent implements OnInit, OnDestroy {
     );
 
   display = (label: string): boolean =>
-    this.headers().find(
+    this.headers.find(
       (header: Partial<FormTableElement>) => header.label === label
     ).display;
 
@@ -70,6 +54,23 @@ export class TableComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
+    this.columns = this.columns.filter(
+      (column: Partial<FormTableElement>) => column.tableDisplay
+    );
+
+    this.headers = [
+      ...this.columns.map((column: Partial<FormTableElement>) => ({
+        label: column.label,
+        tableDisplay: column.tableDisplay,
+        display: column.display || column.tableDisplay,
+      })),
+      {
+        label: 'Actions',
+        tableDisplay: true,
+        display: true,
+      },
+    ];
+
     // this.columns = [
     //   ...this.columns,
     //   {
