@@ -29,10 +29,10 @@ export class TableComponent implements OnInit, OnDestroy {
 
   headers: Partial<FormTableElement>[] = [];
 
-  dataColumns = () =>
-    this.columns.filter(
-      (column: Partial<FormTableElement>) => column.tableDisplay
-    );
+  // dataColumns = () =>
+  //   this.columns.filter(
+  //     (column: Partial<FormTableElement>) => column.tableDisplay
+  //   );
 
   display = (label: string): boolean =>
     this.headers.find(

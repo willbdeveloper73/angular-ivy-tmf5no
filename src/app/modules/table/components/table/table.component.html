@@ -44,7 +44,7 @@
                 *ngFor="let row of data; index as i"
                 class="border-b content-center"
               >
-                <ng-container *ngFor="let column of dataColumns()">
+                <ng-container *ngFor="let column of columns">
                   <td
                     *ngIf="display(column.label)"
                     class="
@@ -66,7 +66,7 @@
                   </td>
                 </ng-container>
                 <!-- Actions column -->
-                <td class="justify-items-center">
+                <td *ngIf="d" class="justify-items-center">
                   <div class="flex justify-evenly">
                     <app-button-edit
                       (clicked)="edit.emit(row)"
