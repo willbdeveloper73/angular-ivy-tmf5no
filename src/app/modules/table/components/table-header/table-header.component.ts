@@ -9,8 +9,9 @@ export class TableHeaderComponent {
   @Input() element: Partial<FormTableElement>;
   @Input() data: Partial<unknown>[] = [];
 
-  ariaName = () =>
-    this.element.label.toLowerCase().replace(' ', '') + '-control-list';
+  get ariaName() {
+    return this.element.label.toLowerCase().replace(' ', '') + '-control-list';
+  }
 
   choices = [{ label: 'Sort' }, { label: 'Filter' }];
 
