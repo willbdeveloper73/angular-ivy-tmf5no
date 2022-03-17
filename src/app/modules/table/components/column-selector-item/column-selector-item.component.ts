@@ -7,6 +7,7 @@ import { FormTableElement } from '../../../shared-types';
 })
 export class ColumnSelectorItemComponent {
   @Input() item: Partial<FormTableElement> = {};
+  @Input() displayCheckbox: boolean = true;
   @Output() change: EventEmitter<Partial<FormTableElement>> = new EventEmitter<
     Partial<FormTableElement>
   >();
