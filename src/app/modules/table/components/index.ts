@@ -2,7 +2,7 @@ import { ButtonAddComponent } from './button-add';
 import { ButtonEditComponent } from './button-edit';
 import { ButtonDeleteComponent } from './button-delete';
 import { ColumnSelectorComponent } from './column-selector';
-import { ColumnSelectorIComponent } from './column-selector';
+import { ColumnSelectorItemComponent } from './column-selector-item';
 import { PaginationComponent } from './pagination';
 import { TableComponent } from './table';
 import { TableHeaderComponent } from './table-header';
