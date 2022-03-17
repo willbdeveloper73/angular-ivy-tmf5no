@@ -1,7 +1,7 @@
 <div>app-column-selector works</div>
 
 <div
-  class="min-h-screen bg-white py-6 flex flex-col justify-center group sm:py-12"
+  class="bg-white py-6 flex flex-col justify-center group"
 >
   <div class="flex items-center justify-center p-12">
     <div class="relative inline-block text-left dropdown">
@@ -87,20 +87,6 @@
             [item]="item"
           >
           </app-column-selector-item>
-
-          <!-- <div
-            *ngFor="let column of columns"
-            class="
-              px-4
-              py-1
-              hover:cursor-pointer hover:border-blue-300 hover:bg-gray-50
-            "
-          >
-            <label class="inline-flex items-center">
-              <input type="checkbox" class="hover:cursor-pointer" checked />
-              <span class="ml-2">{{ column.label }}</span>
-            </label>
-          </div> -->
         </div>
       </div>
     </div>
