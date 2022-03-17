@@ -11,8 +11,20 @@
     <div class="overflow-x-auto">
       <div class="inline-block min-w-full py-2">
         <div class="overflow-hidden">
-          <table class="bg-white divide-y divide-gray-200 table-fixed">
-            <thead class="border-b">
+          <table
+            class="
+              bg-white
+              w-full
+              divide-y divide-gray-200
+              table-auto
+              overflow-scroll
+            "
+          >
+            <thead class="border-b w-full sticky">
+              <!-- <app-table-header
+                class="min-w-full"
+                [elements]="headers"
+              ></app-table-header> -->
               <tr>
                 <ng-container *ngFor="let column of headers">
                   <th
@@ -26,7 +38,10 @@
                       text-gray-900
                     "
                   >
-                    {{ column.label }}
+                    <app-table-header [element]="column"></app-table-header>
+                    <!-- <div>
+                      {{ column.label }}
+                    </div> -->
                   </th>
                 </ng-container>
               </tr>
@@ -66,7 +81,7 @@
                   </td>
                 </ng-container>
                 <!-- Actions column -->
-                <td *ngIf="display('Actions')"  class="justify-items-center">
+                <td *ngIf="display('Actions')" class="justify-items-center">
                   <div class="flex justify-evenly">
                     <app-button-edit
                       (clicked)="edit.emit(row)"
