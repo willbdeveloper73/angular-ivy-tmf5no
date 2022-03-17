@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormTableElement } from '../../../shared-types';
 
 @Component({
@@ -7,4 +7,12 @@ import { FormTableElement } from '../../../shared-types';
 })
 export class ColumnSelectorItemComponent {
   @Input() item: Partial<FormTableElement> = {};
+  @Output() change: EventEmitter<Partial<FormTableElement>> = new EventEmitter<
+    Partial<FormTableElement>
+  >();
+
+  onChange() {
+    this.item.display = !this.item.display;
+    this.change.emit(this.item);
+  }
 }
