@@ -8,4 +8,13 @@ import { FormTableElement } from '../../../shared-types';
 export class TableHeaderComponent {
   @Input() element: Partial<FormTableElement>;
   @Input() data: Partial<unknown>[] = [];
+
+  ariaName = () =>
+    this.element.label.toLowerCase().replace(' ', '') + '-control-list';
+
+  choices = [{ label: 'Sort' }, { label: 'Filter' }];
+
+  displayMenu() {
+    console.log('clicked');
+  }
 }
