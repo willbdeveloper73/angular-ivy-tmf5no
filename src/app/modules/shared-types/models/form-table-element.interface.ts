@@ -12,6 +12,7 @@ export interface FormTableElement {
   required?: boolean;
   options?: Partial<SelectItem>[];
   display?: boolean;
+  choices?: unknown[];
 }
 
 export type TableElements = Partial<FormTableElement>[];
