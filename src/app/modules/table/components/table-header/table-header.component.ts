@@ -30,7 +30,7 @@ export class TableHeaderComponent implements OnInit {
       {
         label: 'Filter',
         ariaName: 'filter-' + this.element.name,
-        choices: this.data.map((item) => item[this.element.name]),
+        choices: this.data.map((item) => ({ label: item[this.element.name] })),
       },
     ];
   }
