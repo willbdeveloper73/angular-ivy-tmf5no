@@ -9,6 +9,7 @@ import { FormTableElement } from '../../../shared-types';
 export class DropdownMenuComponent implements OnInit {
   @Input() element: Partial<FormTableElement>;
   @Input() data: Partial<unknown>[] = [];
+  @Input() isColumnSelector: boolean = false;
   @Input() displayCheckbox: boolean = true;
   ariaName: string;
 
