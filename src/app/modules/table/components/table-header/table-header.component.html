@@ -1,7 +1,7 @@
-<ng-container *ngIf="element.label !== 'Actions'; else empty">
+<!-- <ng-container *ngIf="element.label !== 'Actions'; else empty">
   <div class="bg-white flex flex-col justify-center group">
     <div class="flex items-center justify-center">
-      <!-- <div class="relative inline-block text-left dropdown z-50">
+      <div class="relative inline-block text-left dropdown z-50">
         <span>
           <button
             class="
@@ -75,7 +75,7 @@
             role="menu"
           >
             <app-column-selector-item
-              *ngFor="let item of choices"
+              *ngFor="let item of element.choices"
               class="
                 w-full
                 bg-white
@@ -92,7 +92,7 @@
             </app-column-selector-item>
           </div>
         </div>
-      </div> -->
+      </div>
       <app-dropdown-menu
         [element]="element"
         [displayCheckbox]="false"
@@ -101,6 +101,6 @@
   </div>
 </ng-container>
 
-<ng-template #empty>
-  <span>{{ element.label }}</span>
-</ng-template>
+<ng-template #empty> -->
+<span>{{ element.label }}</span>
+<!-- </ng-template> -->
