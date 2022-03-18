@@ -11,6 +11,8 @@ export class TableHeaderComponent implements OnInit {
 
   columnAriaName: string;
 
+  // choices: Partial<FormTableElement>[] = [];
+
   buildAriaName = (label: string) => label + '-control-list';
 
   constructor() {}
@@ -19,9 +21,19 @@ export class TableHeaderComponent implements OnInit {
     this.columnAriaName = this.buildAriaName(
       this.element.label.toLowerCase().replace(' ', '')
     );
-  }
 
-  choices = [{ label: 'Sort' }, { label: 'Filter' }];
+    this.element.choices = [
+      {
+        label: 'Sort',
+        ariaName: 'sort-' + this.element.name,
+      },
+      {
+        label: 'Filter',
+        ariaName: 'filter-' + this.element.name,
+        choices: this.data.map((item) => item[this.element.name]),
+      },
+    ];
+  }
 
   displayMenu() {
     console.log('clicked');
