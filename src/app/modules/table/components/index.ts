@@ -3,6 +3,7 @@ import { ButtonEditComponent } from './button-edit';
 import { ButtonDeleteComponent } from './button-delete';
 import { ColumnSelectorComponent } from './column-selector';
 import { ColumnSelectorItemComponent } from './column-selector-item';
+import { DropdownMenuComponent } from './dropdown-menu';
 import { PaginationComponent } from './pagination';
 import { TableComponent } from './table';
 import { TableHeaderComponent } from './table-header';
@@ -16,6 +17,7 @@ export const Components = [
   ButtonDeleteComponent,
   ColumnSelectorComponent,
   ColumnSelectorItemComponent,
+  DropdownMenuComponent,
   PaginationComponent,
   TableHeaderComponent,
 ];
