@@ -1,5 +1,4 @@
 import {
-  ChangeDetectionStrategy,
   Component,
   EventEmitter,
   Input,
@@ -15,7 +14,6 @@ import { PlayListService, StatusService, UserService } from '../../../shared';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TableComponent implements OnInit, OnDestroy {
   @Input() columns: Partial<FormTableElement>[] = [];
@@ -28,11 +26,6 @@ export class TableComponent implements OnInit, OnDestroy {
   @Output() delete: EventEmitter<unknown> = new EventEmitter<unknown>();
 
   headers: Partial<FormTableElement>[] = [];
-
-  // dataColumns = () =>
-  //   this.columns.filter(
-  //     (column: Partial<FormTableElement>) => column.tableDisplay
-  //   );
 
   display = (label: string): boolean =>
     this.headers.find(
@@ -61,6 +54,7 @@ export class TableComponent implements OnInit, OnDestroy {
     this.headers = [
       ...this.columns.map((column: Partial<FormTableElement>) => ({
         label: column.label,
+        name: column.name,
         tableDisplay: column.tableDisplay,
         display: column.display || column.tableDisplay,
       })),
@@ -71,16 +65,6 @@ export class TableComponent implements OnInit, OnDestroy {
       },
     ];
 
-    // this.columns = [
-    //   ...this.columns,
-    //   {
-    //     label: 'Actions',
-    //     tableDisplay: true,
-    //     display: true,
-    //   },
-    // ];
-
-    // console.log('this.columns:', this.columns);
     this.#columns.next(this.columns);
 
     this.checkService({
