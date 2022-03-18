@@ -1,16 +1,24 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormTableElement } from '../../../shared-types';
 
 @Component({
   selector: 'app-table-header',
   templateUrl: './table-header.component.html',
 })
-export class TableHeaderComponent {
+export class TableHeaderComponent implements OnInit {
   @Input() element: Partial<FormTableElement>;
   @Input() data: Partial<unknown>[] = [];
 
-  get ariaName() {
-    return this.element.label.toLowerCase().replace(' ', '') + '-control-list';
+  columnAriaName: string;
+
+  buildAriaName = (label: string) => label + '-control-list';
+
+  constructor() {}
+
+  ngOnInit() {
+    this.columnAriaName = this.buildAriaName(
+      this.element.label.toLowerCase().replace(' ', '')
+    );
   }
 
   choices = [{ label: 'Sort' }, { label: 'Filter' }];
