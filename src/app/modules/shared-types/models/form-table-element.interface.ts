@@ -13,7 +13,7 @@ export interface FormTableElement {
   options?: Partial<SelectItem>[];
   display?: boolean;
   choices?: Partial<FormTableElement>[];
-  ariaName: string;
+  ariaName?: string;
 }
 
 export type TableElements = Partial<FormTableElement>[];
