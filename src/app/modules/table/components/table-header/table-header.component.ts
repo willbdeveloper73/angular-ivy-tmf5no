@@ -18,4 +18,12 @@ export class TableHeaderComponent {
   displayMenu() {
     console.log('clicked');
   }
+
+  displayChoice($event) {
+    console.log('choice selected:', {
+      event: $event,
+      element: this.element,
+      data: this.data,
+    });
+  }
 }
