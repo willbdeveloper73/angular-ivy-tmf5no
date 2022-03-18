@@ -7,4 +7,13 @@ import { FormTableElement } from '../../../shared-types';
 })
 export class ColumnSelectorComponent {
   @Input() columns: Partial<FormTableElement>[] = [];
+
+  menu: Partial<FormTableElement> = {};
+
+  ngOnInit() {
+    this.menu = {
+      label: 'Columns',
+      choices: this.columns,
+    };
+  }
 }
