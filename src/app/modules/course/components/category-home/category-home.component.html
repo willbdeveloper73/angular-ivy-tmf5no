@@ -1,4 +1,10 @@
-<app-category-panel
-  *ngFor="let category of categoryService.items$ | async"
-  [category]="category"
-></app-category-panel>
+<div class="flex flex-row">
+  <app-user-info></app-user-info>
+  <div class="w-full grid grid-cols-2 grid-flow-row">
+    <app-category-panel
+      class="px-6"
+      *ngFor="let category of categoryService.items$ | async"
+      [category]="category"
+    ></app-category-panel>
+  </div>
+</div>
