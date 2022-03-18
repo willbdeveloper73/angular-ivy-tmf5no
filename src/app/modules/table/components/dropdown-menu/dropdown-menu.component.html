@@ -10,17 +10,17 @@
         py-2
         text-sm
         font-medium
-        focus-within:opacity-100
-        focus-within:visible
-        focus-within:scale-100
-        focus-within:translate-x-0
-        focus-within:translate-y-0
       "
       type="button"
       aria-haspopup="true"
       aria-expanded="true"
       [attr.aria-controls]="ariaName"
     >
+      <!-- focus-within:opacity-100
+        focus-within:visible
+        focus-within:scale-100
+        focus-within:translate-x-0
+        focus-within:translate-y-0 -->
       <span>{{ element.label }}</span>
       <svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor">
         <path
@@ -42,13 +42,13 @@
       origin-top-left
       -translate-y-2
       scale-95
-      focus-within:opacity-100
+    "
+  >
+    <!-- focus-within:opacity-100
       focus-within:visible
       focus-within:scale-100
       focus-within:translate-x-0
-      focus-within:translate-y-0
-    "
-  >
+      focus-within:translate-y-0 -->
     <div
       class="
         absolute
@@ -67,22 +67,41 @@
       [attr.id]="ariaName"
       role="menu"
     >
-      <app-column-selector-item
-        *ngFor="let item of element.choices"
-        class="
-          w-full
-          bg-white
-          px-4
-          py-1
-          inline-flex
-          align-center
-          hover:cursor-pointer hover:border-blue-300 hover:bg-gray-100
-        "
-        [item]="item"
-        [displayCheckbox]="false"
-        (click)="displayChoice(item)"
-      >
-      </app-column-selector-item>
+      <ng-container *ngFor="let item of element.choices">
+        <!-- *ngFor="let item of element.choices" -->
+        <!-- {{ item | json }} -->
+        <app-dropdown-menu
+          *ngIf="!!item['choices']; else items"
+          [element]="item"
+          [displayCheckbox]="true"
+        ></app-dropdown-menu>
+        <ng-template #items>
+          <app-column-selector-item
+            class="
+              relative
+              w-full
+              bg-white
+              px-4
+              py-1
+              inline-flex
+              align-center
+              hover:cursor-pointer hover:border-blue-300 hover:bg-gray-100
+            "
+            [item]="item"
+            [displayCheckbox]="displayCheckbox"
+            (click)="displayChoice(item)"
+          >
+          </app-column-selector-item>
+        </ng-template>
+      </ng-container>
     </div>
   </div>
 </div>
+
+<!-- <style>
+  .dropdown:focus-within .dropdown-menu {
+    opacity:1;
+    transform: translate(0) scale(1);
+    visibility: visible;
+  }
+</style> -->
