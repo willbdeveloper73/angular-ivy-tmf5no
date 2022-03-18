@@ -21,10 +21,6 @@
             "
           >
             <thead class="border-b w-full sticky">
-              <!-- <app-table-header
-                class="min-w-full"
-                [elements]="headers"
-              ></app-table-header> -->
               <tr>
                 <ng-container *ngFor="let column of headers">
                   <th
@@ -38,10 +34,10 @@
                       text-gray-900
                     "
                   >
-                    <app-table-header [element]="column"></app-table-header>
-                    <!-- <div>
-                      {{ column.label }}
-                    </div> -->
+                    <app-table-header
+                      [element]="column"
+                      [data]="data"
+                    ></app-table-header>
                   </th>
                 </ng-container>
               </tr>
