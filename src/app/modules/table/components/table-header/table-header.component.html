@@ -16,7 +16,7 @@
             type="button"
             aria-haspopup="true"
             aria-expanded="true"
-            [attr.aria-controls]="ariaName"
+            [attr.aria-controls]="columnAriaName"
           >
             <span>{{ element.label }}</span>
             <svg
@@ -59,8 +59,8 @@
               shadow-lg
               outline-none
             "
-            [attr.labelledby]="ariaName"
-            [attr.id]="ariaName"
+            [attr.labelledby]="columnAriaName"
+            [attr.id]="columnAriaName"
             role="menu"
           >
             <app-column-selector-item
