@@ -98,9 +98,9 @@ export class TableComponent implements OnInit, OnDestroy {
       checkService.items$
         .pipe(
           map((items: Array<unknown>) => {
-            const index = this.columns?.findIndex(
-              (item) => item['name'] === columnName
-            );
+            // const index = this.columns?.findIndex(
+            //   (item) => item['name'] === columnName
+            // );
             if (index >= 0 && items) {
               const func = (row) => {
                 const rowFound = items?.find(
@@ -114,7 +114,6 @@ export class TableComponent implements OnInit, OnDestroy {
               };
 
               this.columns[index].data = (row) => func(row);
-              console.log;
             }
           }),
           takeUntil(this.destroy$)
