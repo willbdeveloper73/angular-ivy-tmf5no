@@ -7,7 +7,7 @@ import { Course } from '../../../../shared-types';
 import { CourseForm, CourseService } from '../../../../shared';
 
 @Component({
-  selector: 'app-course',
+  selector: 'app-course-admin',
   templateUrl: './course-admin.component.html',
 })
 export class CourseAdminComponent implements OnInit, OnDestroy {
