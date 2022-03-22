@@ -1,8 +1,5 @@
-<app-dialog>
-  <app-display-form
-    contentForm
-    [Form]="form"
-    [elements]="elements()"
-    (formSave)="save($event)"
-  ></app-display-form>
-</app-dialog>
+<app-display-form
+  [Form]="form"
+  [elements]="elements()"
+  (formSave)="save($event)"
+></app-display-form>
