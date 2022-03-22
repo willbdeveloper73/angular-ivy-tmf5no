@@ -1,4 +1,11 @@
-import { AfterViewInit, Component, Inject, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Inject,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import {
   Course,
@@ -6,10 +13,7 @@ import {
   CourseAdminFilter,
 } from '../../../../shared-types';
 
-import {
-  CrudService,
-  CourseService,
-} from '../../../../shared';
+import { CrudService, CourseService } from '../../../../shared';
 
 @Component({
   selector: 'app-course-table',
@@ -31,21 +35,27 @@ export class CourseTableComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.elm = this.courseModal.nativeElement as HTMLElement;
+    // console.log('this.elm:', this.elm);
   }
 
   openModal(): void {
-    this.elm.classList.add('show');
+    this.elm.classList.remove('hidden');
+    this.elm.classList.add('visible');
+    // this.elm.classList.add('block');
     this.elm.style.width = '100vw';
+    console.log('this.elm:', this.elm);
   }
 
   close(): void {
-    this.elm.classList.remove('show');
+    this.elm.classList.remove('visible');
+    // this.elm.classList.remove('block');
+    this.elm.classList.add('hidden');
+
     setTimeout(() => {
       this.elm.style.width = '0';
     }, 75);
   }
 
- 
   add() {
     // this.router.navigate(['/admin/course/add']);
     this.service.blank();
@@ -53,6 +63,7 @@ export class CourseTableComponent implements OnInit, AfterViewInit {
   }
 
   edit($event: Partial<Course>) {
+    console.log('edit clicked for:', $event.id);
     // this.router.navigate(['/admin/course/edit', $event.id]);
     this.service.get($event.id);
     this.openModal();
