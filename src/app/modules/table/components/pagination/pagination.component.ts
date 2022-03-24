@@ -9,7 +9,8 @@ export class PaginationComponent {
   @Input() pagination: Partial<Pagination> = {};
 
   public get start() {
-    return this.pagination.page * this.pagination.pageSize + 1;
+    if (!this.pagination.listLength) return 0;
+    return (this.pagination.pageSize + 1) * this.pagination.page;
   }
 
   public get end() {
@@ -24,14 +25,14 @@ export class PaginationComponent {
     return 1;
   }
 
+  public get lastPage() {
+    return Math.ceil(this.pagination.listLength / this.pagination.pageSize);
+  }
+
   range = (start, end) => {
     const length = end - start;
     return Array.from({ length }, (_, i) => start + i);
   };
-
-  public get lastPage() {
-    return Math.ceil(this.pagination.listLength / this.pagination.pageSize);
-  }
 
   public get pageRange() {
     return [...this.range(this.firstPage, this.lastPage)];
