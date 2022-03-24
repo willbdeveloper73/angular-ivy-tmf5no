@@ -39,8 +39,8 @@ import { CrudService, CourseService } from '../../../../shared';
           transform: 'translate3d(100%, 0, 0)',
         })
       ),
-      transition('in => out', animate('400ms ease-in-out')),
-      transition('out => in', animate('400ms ease-in-out')),
+      transition('in => out', animate('1000ms ease-in-out')),
+      transition('out => in', animate('1000ms ease-in-out')),
     ]),
   ],
 })
