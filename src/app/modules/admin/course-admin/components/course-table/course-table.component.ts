@@ -6,6 +6,13 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+} from '@angular/animations';
 import { Router } from '@angular/router';
 import {
   Course,
@@ -18,10 +25,30 @@ import { CrudService, CourseService } from '../../../../shared';
 @Component({
   selector: 'app-course-table',
   templateUrl: './course-table.component.html',
+  animations: [
+    trigger('slideInOut', [
+      state(
+        'in',
+        style({
+          transform: 'translate3d(100%, 0, 0)',
+        })
+      ),
+      state(
+        'out',
+        style({
+          transform: 'translate3d(100%, 0, 0)',
+        })
+      ),
+      transition('in => out', animate('400ms ease-in-out')),
+      transition('out => in', animate('400ms ease-in-out')),
+    ]),
+  ],
 })
 export class CourseTableComponent implements OnInit, AfterViewInit {
   @ViewChild('courseModal', { static: false }) courseModal: ElementRef;
   elm: HTMLElement;
+
+  menuState: string = 'out';
 
   constructor(
     public service: CourseService,
@@ -35,25 +62,25 @@ export class CourseTableComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.elm = this.courseModal.nativeElement as HTMLElement;
-    // console.log('this.elm:', this.elm);
   }
 
   openModal(): void {
+    this.menuState = 'in';
     this.elm.classList.remove('hidden');
     this.elm.classList.add('visible');
-    // this.elm.classList.add('block');
     this.elm.style.width = '100vw';
-    console.log('this.elm:', this.elm);
+    // console.log('this.elm:', this.elm);
   }
 
   close(): void {
+    this.menuState = 'out';
     this.elm.classList.remove('visible');
-    // this.elm.classList.remove('block');
     this.elm.classList.add('hidden');
 
     setTimeout(() => {
       this.elm.style.width = '0';
     }, 75);
+    // console.log('this.elm:', this.elm);
   }
 
   add() {
