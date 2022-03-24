@@ -10,18 +10,18 @@ export class PaginationComponent {
 
   public get start() {
     if (!this.pagination.listLength) return 0;
-    return (this.pagination.pageSize + 1) * this.pagination.page;
+    return ((this.pagination.pageSize + 1) * (this.pagination.page || 0)) || 1;
   }
 
   public get end() {
-    return (this.pagination.page + 1) * this.pagination.pageSize >=
+    return ((this.pagination.page || 0) + 1) * this.pagination.pageSize >=
       this.pagination.listLength
       ? this.pagination.listLength
-      : (this.pagination.page + 1) * this.pagination.pageSize;
+      : ((this.pagination.page || 0) + 1) * this.pagination.pageSize;
   }
 
   public get firstPage() {
-    if (this.pagination.page + 1 - 2 >= 1) return this.pagination.page + 1 - 2;
+    if ((this.pagination.page - 1) >= 1) return this.pagination.page - 1;
     return 1;
   }
 
