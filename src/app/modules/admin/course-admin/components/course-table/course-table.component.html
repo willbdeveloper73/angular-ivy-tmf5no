@@ -24,66 +24,9 @@
   </div>
 </div>
 
-<div
-  class="
-    fixed
-    hidden
-    inset-0
-    bg-gray-600 bg-opacity-50
-    overflow-y-auto
-    h-full
-    z-30
-  "
-  tabindex="-1"
-  role="dialog"
-  #courseModal
+<app-right-side-modal
+  [open]="modalOpen$ | async"
+  (close)="modalOpen.next($event)"
 >
-  <!-- class="
-    fixed
-    hidden
-    top-0
-    right-0
-    bg-gray-600/50
-    overflow-y-auto
-    h-full
-    z-30
-  " -->
-  <div
-    [@slideInOut]="menuState"
-    class="
-      w-1/2
-      sticky
-      modal-dialog
-      max-w-1/2
-      overflow-hidden
-      overscroll-none
-      bg-white
-      group:visible:transition-all
-      group:visible:delay-150
-      group:visible:ease-out
-      group-visible:duration-700
-    "
-  >
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button
-          type="button"
-          class="close"
-          (click)="close()"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <app-course-modal class="w-1/2"></app-course-modal>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)="close()">
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
+  <app-course-modal class="w-1/2"></app-course-modal>
+</app-right-side-modal>
