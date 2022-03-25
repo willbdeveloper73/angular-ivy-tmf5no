@@ -16,6 +16,8 @@ import {
   animate,
 } from '@angular/animations';
 
+import { ModalService } from '../../services';
+
 @Component({
   selector: 'app-right-side-modal',
   templateUrl: './right-side-modal.component.html',
@@ -39,22 +41,15 @@ import {
   ],
 })
 export class RightSideModalComponent implements OnInit {
-  @Input()
-  get open(): boolean {
-    return this._open;
-  }
-  set open(open: boolean) {
-    if (open) this.openModal();
-    this._open = open;
-  }
-  private _open: boolean = false;
-
-  @Output() close: EventEmitter<boolean> = new EventEmitter<boolean>();
   @ViewChild('Modal', { static: false }) modal: ElementRef;
   elem: HTMLElement;
   menuState: string = 'out';
 
-  ngOnInit() {}
+  constructor(public modalService: ModalService) {}
+
+  ngOnInit() {
+    this.modalService.open$.pipe().subscribe((_) => console.log);
+  }
 
   ngAfterViewInit(): void {
     this.elem = this.modal.nativeElement as HTMLElement;
@@ -75,6 +70,6 @@ export class RightSideModalComponent implements OnInit {
     setTimeout(() => {
       this.elem.style.width = '0';
     }, 75);
-    this.close.emit(!this.open);
+    this.modalService.close();
   }
 }
