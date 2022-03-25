@@ -7,7 +7,7 @@ import {
   CourseAdminFilter,
 } from '../../../../shared-types';
 
-import { CrudService, CourseService } from '../../../../shared';
+import { CrudService, CourseService, ModalService } from '../../../../shared';
 
 @Component({
   selector: 'app-course-table',
@@ -19,6 +19,7 @@ export class CourseTableComponent implements OnInit {
 
   constructor(
     public service: CourseService,
+    public modalService: ModalService,
     @Inject('COLUMNS') public columns: any,
     private router: Router
   ) {}
@@ -29,13 +30,14 @@ export class CourseTableComponent implements OnInit {
   add() {
     // this.router.navigate(['/admin/course/add']);
     this.service.blank();
-    this.modalOpen.next(true);
+    this.modalService.open();
   }
 
   edit($event: Partial<Course>) {
     // this.router.navigate(['/admin/course/edit', $event.id]);
     this.service.get($event.id);
-    this.modalOpen.next(true);
+    this.modalService.open();
+    this.service.get();
   }
 
   delete(item: Partial<Course>) {
