@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
 import { Course } from '../../../../shared-types';
-import { CourseForm, CourseService } from '../../../../shared';
+import { CourseForm, CourseService, ModalService } from '../../../../shared';
 
 @Component({
   selector: 'app-course-modal',
@@ -17,6 +17,7 @@ export class CourseModalComponent implements OnInit, OnDestroy {
   constructor(
     private courseForm: CourseForm,
     private service: CourseService,
+    private modalService: ModalService,
     private router: Router,
     @Inject('COLUMNS') public elements: any
   ) {}
@@ -38,6 +39,7 @@ export class CourseModalComponent implements OnInit, OnDestroy {
 
   save(form: FormGroup) {
     this.service.save(this.courseForm.values(form));
-    this.router.navigate(['/admin/course/list']);
+    this.modalService.close();
+    // this.router.navigate(['/admin/course/list']);
   }
 }
