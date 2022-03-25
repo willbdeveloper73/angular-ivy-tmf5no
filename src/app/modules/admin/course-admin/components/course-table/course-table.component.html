@@ -24,9 +24,6 @@
   </div>
 </div>
 
-<app-right-side-modal
-  [open]="modalOpen$ | async"
-  (close)="modalOpen.next($event)"
->
+<app-right-side-modal>
   <app-course-modal class="w-1/2"></app-course-modal>
 </app-right-side-modal>
