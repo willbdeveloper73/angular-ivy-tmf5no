@@ -43,7 +43,7 @@ import { ModalService } from '../../services';
 export class RightSideModalComponent implements OnInit {
   @ViewChild('Modal', { static: false }) modal: ElementRef;
   elem: HTMLElement;
-  menuState: string = 'out';
+  menuState: string = 'in';
 
   constructor(public modalService: ModalService) {}
 

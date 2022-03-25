@@ -2,6 +2,7 @@ import { LayoutComponent } from './layout';
 import { BrandComponent } from './brand';
 import { MenuItemComponent } from './menu-item';
 import { MenuItemsDropdownComponent } from './menu-items-dropdown';
+import { SearchBarComponent } from './search-bar';
 import { SelectUserComponent } from './select-user';
 import { UserProfileComponent } from './user-profile';
 
@@ -12,6 +13,7 @@ export const Components = [
   BrandComponent,
   MenuItemComponent,
   MenuItemsDropdownComponent,
+  SearchBarComponent,
   SelectUserComponent,
   UserProfileComponent,
 ];
