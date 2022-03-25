@@ -48,7 +48,11 @@ export class RightSideModalComponent implements OnInit {
   constructor(public modalService: ModalService) {}
 
   ngOnInit() {
-    this.modalService.open$.pipe().subscribe((_) => console.log);
+    this.modalService.open$
+      .subscribe(
+        (open: boolean) =>
+          open ? this.openModal() : this.onClose()
+      );
   }
 
   ngAfterViewInit(): void {
