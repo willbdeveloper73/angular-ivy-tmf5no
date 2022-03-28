@@ -69,11 +69,12 @@ export class RightSideModalComponent implements OnInit {
   onClose(): void {
     if (this.elem) {
       this.menuState = 'out';
-    this.elem.classList.remove('visible');
-    this.elem.classList.add('hidden');
+      this.elem.classList.remove('visible');
+      this.elem.classList.add('hidden');
 
-    setTimeout(() => {
-      this.elem.style.width = '0';
-    }, 75);
+      setTimeout(() => {
+        this.elem.style.width = '0';
+      }, 75);
+    }
   }
 }
