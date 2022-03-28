@@ -1,6 +1,7 @@
 import { BellIconComponent } from './bell-icon';
 import { ChipComponent } from './chip';
 import { DialogComponent } from './dialog';
+import { HeaderButtonComponent } from './header-button';
 import { RatingStarsComponent } from './rating-stars';
 import { RightSideModalComponent } from './right-side-modal';
 import { SearchIconComponent } from './search-icon';
@@ -13,6 +14,7 @@ export const ComponentsExport = [
   BellIconComponent,
   ChipComponent,
   DialogComponent,
+  HeaderButtonComponent,
   RatingStarsComponent,
   RightSideModalComponent,
   SearchbarComponent,
