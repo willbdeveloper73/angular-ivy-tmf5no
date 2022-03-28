@@ -2,7 +2,7 @@ import { Component, Inject, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
-import { map, takeUntil } from 'rxjs/operators';
+import { map, takeUntil, tap } from 'rxjs/operators';
 import { Course } from '../../../../shared-types';
 import { CourseForm, CourseService, ModalService } from '../../../../shared';
 
@@ -26,10 +26,15 @@ export class CourseModalComponent implements OnInit, OnDestroy {
     this.form = this.courseForm.generate();
 
     this.service.item$
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((item: Course) =>
-        this.form.patchValue(this.courseForm.patch(item))
-      );
+      .pipe(
+        tap((item: Course) => console.log('tap:item:', item)),
+        takeUntil(this.destroy$)
+      )
+      .subscribe((item: Course) => {
+        const patchValue = this.courseForm.patch(item);
+        console.log('patchValue:', patchValue);
+        this.form.patchValue(patchValue);
+      });
   }
 
   ngOnDestroy() {

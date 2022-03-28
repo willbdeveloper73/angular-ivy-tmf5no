@@ -7,15 +7,14 @@ import { PaginationService } from './pagination.service';
 // export class CrudService<T extends BaseName> implements ApiService<T> {
 export class CrudService<T extends BaseName> extends PaginationService {
   protected _items: Partial<T>[];
-  protected item: BehaviorSubject<Partial<T>> = new BehaviorSubject<Partial<T>>(
-    null
-  );
-  item$: Observable<Partial<T>> = this.item.asObservable();
+  protected item: BehaviorSubject<Partial<T> | null> =
+    new BehaviorSubject<Partial<T> | null>(null);
+  item$: Observable<Partial<T> | null> = this.item.asObservable();
 
-  protected items: BehaviorSubject<Partial<T>[]> = new BehaviorSubject<
-    Partial<T>[]
+  protected items: BehaviorSubject<Partial<T>[] | null> = new BehaviorSubject<
+    Partial<T>[] | null
   >(null);
-  items$: Observable<Partial<T>[]> = this.items.asObservable();
+  items$: Observable<Partial<T>[] | null> = this.items.asObservable();
 
   protected getNextId(): number {
     if (this._items.length === 0) return 1;

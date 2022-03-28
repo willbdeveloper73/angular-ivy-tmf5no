@@ -32,7 +32,7 @@ export class CourseForm extends BaseForm {
       rating: [record?.rating || null],
     });
 
-  patch = (record: Partial<Course>) => ({
+  patch = (record: Partial<Course> | null) => ({
     ...record,
     datePublished: convertDate(record?.datePublished),
     dateUpdated: convertDate(record?.dateUpdated),

@@ -48,11 +48,9 @@ export class RightSideModalComponent implements OnInit {
   constructor(public modalService: ModalService) {}
 
   ngOnInit() {
-    this.modalService.open$
-      .subscribe(
-        (open: boolean) =>
-          open ? this.openModal() : this.onClose()
-      );
+    this.modalService.open$.subscribe((open: boolean) =>
+      open ? this.openModal() : this.onClose()
+    );
   }
 
   ngAfterViewInit(): void {
@@ -60,20 +58,22 @@ export class RightSideModalComponent implements OnInit {
   }
 
   openModal(): void {
-    this.elem.classList.remove('hidden');
-    this.elem.classList.add('visible');
-    this.elem.style.width = '100vw';
-    this.menuState = 'in';
+    if (this.elem) {
+      this.elem.classList.remove('hidden');
+      this.elem.classList.add('visible');
+      this.elem.style.width = '100vw';
+      this.menuState = 'in';
+    }
   }
 
   onClose(): void {
-    this.menuState = 'out';
+    if (this.elem) {
+      this.menuState = 'out';
     this.elem.classList.remove('visible');
     this.elem.classList.add('hidden');
 
     setTimeout(() => {
       this.elem.style.width = '0';
     }, 75);
-    this.modalService.close();
   }
 }
