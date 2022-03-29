@@ -1,21 +1,47 @@
 <nav class="top-0 mt-1 w-full">
 	<div class="flex items-center">
-		<div class="ml-6 flex w-1/3 justify-start scale-75 lg:scale-100">
-			<app-brand class="h-full w-16"></app-brand>
-		</div>
-
-		<div class="flex w-1/3 items-center justify-center">
-			<app-menu-items-dropdown
-				*ngFor="let menu of menu.mainMenuDropdown$ | async"
-				[menu]="menu"
-				text_color="text-app-base"
-			></app-menu-items-dropdown>
-		</div>
-
-		<div class="mr-6 flex w-1/3 items-center justify-end">
-			<app-searchbar></app-searchbar>
-			<app-bell-icon></app-bell-icon>
-			<app-user-avatar></app-user-avatar>
-		</div>
+	  <div
+		class="
+		  flex
+		  w-1/3
+		  justify-start
+		  scale-[.25]
+		  sm:scale-[.3]
+		  md:scale-50
+		  lg:ml-6 lg:scale-75
+		  xl:scale-100
+		"
+	  >
+		<a [routerLink]="['/']">
+		  <app-brand class="h-full"></app-brand>
+		</a>
+	  </div>
+  
+	  <div
+		class="
+		  flex
+		  w-1/3
+		  items-center
+		  justify-center
+		  text-xs
+		  xs:text-xs
+		  sm:text-sm
+		  md:text-md
+		  lg:text-base
+		"
+	  >
+		<app-menu-items-dropdown
+		  *ngFor="let menu of menu.mainMenuDropdown$ | async"
+		  [menu]="menu"
+		  text_color="text-app-base"
+		></app-menu-items-dropdown>
+	  </div>
+  
+	  <div class="mr-6 flex w-1/3 items-center justify-end">
+		<app-searchbar></app-searchbar>
+		<app-bell-icon></app-bell-icon>
+		<app-user-avatar></app-user-avatar>
+	  </div>
 	</div>
-</nav>
+  </nav>
+  

@@ -1,6 +1,13 @@
 <div *appHasRole="menu.role || 'user'" class="group relative">
   <button
-    class="text-app-primary mr-6 hover:bg-app-secondary transition-all rounded"
+    class="
+      text-app-primary
+      mr-6
+      whitespace-nowrap
+      hover:bg-app-secondary
+      transition-all
+      rounded
+    "
     (click)="!menu.items && navigate(menu.link)"
   >
     {{ menu.text }}
@@ -27,9 +34,11 @@
   >
     <ul class="py-1">
       <li *ngFor="let item of menu.items">
-        <a [routerLink]="item.link" class="block px-4 py-2 hover:bg-gray-100">{{
-          item.text
-        }}</a>
+        <a
+          [routerLink]="item.link"
+          class="block px-4 py-2 whitespace-nowrap hover:bg-gray-100"
+          >{{ item.text }}</a
+        >
       </li>
     </ul>
   </nav>
