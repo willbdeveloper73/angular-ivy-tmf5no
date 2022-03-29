@@ -5,6 +5,7 @@
       class="px-6"
       *ngFor="let category of categoryService.items$ | async"
       [category]="category"
+      [allowCategoryNavigate]="true"
     ></app-category-panel>
   </div>
 </div>
