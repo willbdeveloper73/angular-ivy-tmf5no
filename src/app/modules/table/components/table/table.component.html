@@ -1,4 +1,4 @@
-<ng-container *ngIf="headers">
+<ng-container *ngIf="headers" class="w-full fixed grow items-stretch">
   <div class="px-4 py-2 flex flex-row justify-end">
     <app-button-add (click)="add.emit()"></app-button-add>
   </div>
@@ -7,7 +7,7 @@
     <app-column-selector [columns]="headers"></app-column-selector>
   </div>
 
-  <div class="flex flex-col items-center justify-evenly">
+  <div class="w-full flex flex-col items-center grow items-stretch">
     <div class="overflow-x-auto">
       <div class="inline-block min-w-full py-2">
         <div class="overflow-hidden">

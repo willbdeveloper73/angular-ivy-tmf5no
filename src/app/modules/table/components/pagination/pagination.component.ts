@@ -8,25 +8,31 @@ import { Pagination } from '../../../shared-types';
 export class PaginationComponent {
   @Input() pagination: Partial<Pagination> = {};
 
+  get listLength(): number {
+    return this.pagination.listLength || 0;
+  }
+
   public get start() {
-    if (!this.pagination.listLength) return 0;
-    return ((this.pagination.pageSize + 1) * (this.pagination.page || 0)) || 1;
+    if (!this.listLength) return 0;
+    return (this.pagination.pageSize + 1) * (this.pagination.page || 0) || 1;
   }
 
   public get end() {
-    return ((this.pagination.page || 0) + 1) * this.pagination.pageSize >=
-      this.pagination.listLength
-      ? this.pagination.listLength
+    return !this.listLength
+      ? 0
+      : ((this.pagination.page || 0) + 1) * this.pagination.pageSize >=
+        this.listLength
+      ? this.listLength
       : ((this.pagination.page || 0) + 1) * this.pagination.pageSize;
   }
 
   public get firstPage() {
-    if ((this.pagination.page - 1) >= 1) return this.pagination.page - 1;
+    if (this.pagination.page - 1 >= 1) return this.pagination.page - 1;
     return 1;
   }
 
   public get lastPage() {
-    return Math.ceil(this.pagination.listLength / this.pagination.pageSize);
+    return Math.ceil(this.listLength / this.pagination.pageSize);
   }
 
   range = (start, end) => {
