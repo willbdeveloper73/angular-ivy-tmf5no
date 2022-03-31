@@ -1,8 +1,8 @@
-<div class="flow-root px-4">
-    <div class="float-left">
+<div class="relative px-4">
+    <div class="absolute left-0">
         <img class="h-48 scale-75 items-center" [src]="category?.image" />
     </div>
-    <div class="float-right">
+    <div class="absolute right-0">
         <div class="font-bold">{{ category?.name }}</div>
         <div class="text-sm">
           {{ category?.description | truncate: 100 }}
