@@ -10,11 +10,7 @@ import { FormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
 import { FormTableElement, PlayList, Status } from '../../../shared-types';
-import {
-  PlayListService,  
-  StatusService,
-  UserService,
-} from '../../../shared';
+import { PlayListService, StatusService, UserService } from '../../../shared';
 
 @Component({
   selector: 'app-display-form',
@@ -43,6 +39,8 @@ export class DisplayFormComponent implements OnInit, OnDestroy {
     });
 
     this.checkService({ service: this.userService, columnName: 'authorId' });
+
+    console.log('this.Form:', this.Form);
   }
 
   ngOnDestroy() {

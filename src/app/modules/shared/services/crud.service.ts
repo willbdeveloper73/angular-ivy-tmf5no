@@ -11,10 +11,9 @@ export class CrudService<T extends BaseName> extends PaginationService {
     new BehaviorSubject<Partial<T> | null>(null);
   item$: Observable<Partial<T> | null> = this.item.asObservable();
 
-  protected items: BehaviorSubject<Partial<T>[] | null> = new BehaviorSubject<
-    Partial<T>[] | null
-  >(null);
-  items$: Observable<Partial<T>[] | null> = this.items.asObservable();
+  protected items: BehaviorSubject<Array<Partial<T>> | null> =
+    new BehaviorSubject<Array<Partial<T>> | null>(null);
+  items$: Observable<Array<Partial<T>> | null> = this.items.asObservable();
 
   protected getNextId(): number {
     if (this._items.length === 0) return 1;
@@ -52,7 +51,11 @@ export class CrudService<T extends BaseName> extends PaginationService {
   };
 
   blank(): void {
-    this.item.next(null);
+    // console.log('setting null');
+    // this.item.next(null);
+    console.log('setting {}');
+    this.item.next({});
+    console.log('after:setting value:', this.item.value);
   }
 
   get(id?: number): void {

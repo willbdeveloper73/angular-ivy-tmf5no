@@ -24,6 +24,13 @@ export interface Course extends BaseName {
 }
 
 export const CourseElements: Partial<FormTableElement>[] = [
+  // {
+  //   label: 'ID',
+  //   name: 'id',
+  //   type: 'text',
+  //   tableDisplay: false,
+  //   display: false,
+  // },
   {
     label: 'Course Name',
     name: 'name',

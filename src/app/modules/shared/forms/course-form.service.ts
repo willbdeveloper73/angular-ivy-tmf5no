@@ -32,11 +32,30 @@ export class CourseForm extends BaseForm {
       rating: [record?.rating || null],
     });
 
-  patch = (record: Partial<Course> | null) => ({
-    ...record,
-    datePublished: convertDate(record?.datePublished),
-    dateUpdated: convertDate(record?.dateUpdated),
-  });
+  patch = (record: Partial<Course> | null) => {
+    // console.log('record:', record);
+    const retValue = {
+      ...record,
+      datePublished: record?.datePublished
+        ? convertDate(record?.datePublished)
+        : null,
+      dateUpdated: record?.dateUpdated
+        ? convertDate(record?.dateUpdated)
+        : null,
+    };
+
+    if (!record?.datePublished) {
+      delete retValue.datePublished;
+    }
+
+    if (!record?.dateUpdated) {
+      delete retValue.dateUpdated;
+    }
+
+    // console.log('retValue:', retValue);
+
+    return retValue;
+  };
 
   values = (form: FormGroup): Partial<Course> => ({
     id: form.get('id').value,
