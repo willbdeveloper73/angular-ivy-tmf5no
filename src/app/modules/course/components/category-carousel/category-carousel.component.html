@@ -1,0 +1,12 @@
+<div class="flow-root px-4">
+    <div class="float-left">
+        <img class="h-48 scale-75 items-center" [src]="category?.image" />
+    </div>
+    <div class="float-right">
+        <div class="font-bold">{{ category?.name }}</div>
+        <div class="text-sm">
+          {{ category?.description | truncate: 100 }}
+        </div>
+    </div>
+</div>
+<!-- <div class="w-full flex-col"> -->

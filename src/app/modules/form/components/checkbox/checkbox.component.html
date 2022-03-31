@@ -1,0 +1,4 @@
+<div (click)="checkboxGroup.toggleValue(value)" button detail="false">
+    <label>{{ label }}</label>
+    <input type="checkbox" [checked]="checkboxGroup.isSelected(value)"></input>
+</div>

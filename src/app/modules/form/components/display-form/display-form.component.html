@@ -26,6 +26,13 @@
         [required]="element.required"
       >
         <ng-container [ngSwitch]="element.type">
+          <app-checkbox-group
+            *ngSwitchCase"'checkbox-group'"
+            formControlName="{{element.name}}"
+          >
+            <app-checkbox *ngFor="let item of items" [value]="item.value" [label]="item.label"></app-checkbox>
+          </app-checkbox-group>
+          
           <textarea
             *ngSwitchCase="'textarea'"
             class="
