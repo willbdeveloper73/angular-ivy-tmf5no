@@ -30,7 +30,7 @@
             *ngSwitchCase="'checkbox-group'"
             formControlName="{{element.name}}"
           >
-            <app-checkbox *ngFor="let option of element.options" [value]="option.value" [label]="option.label"></app-checkbox>
+            <app-checkbox *ngFor="let option of element.options" [value]="option.name" [label]="option.label"></app-checkbox>
           </app-checkbox-group>
           
           <textarea
