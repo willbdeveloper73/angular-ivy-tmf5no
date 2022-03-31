@@ -1,4 +1,5 @@
 import { LayoutComponent } from './layout';
+import { CategoryCarouselComponent } from './category-carousel';
 import { CategoryHomeComponent } from './category-home';
 import { CategoryPanelComponent } from './category-panel';
 import { CoursesAvailableComponent } from './courses-available';
@@ -25,6 +26,7 @@ export const ComponentsExport = [
 export const Components = [
   ...ComponentsExport,
   LayoutComponent,
+  CategoryCarouselComponent,
   CategoryHomeComponent,
   CategoryPanelComponent,
   CoursesAvailableComponent,
