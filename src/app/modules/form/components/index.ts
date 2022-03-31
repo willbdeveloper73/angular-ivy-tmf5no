@@ -10,6 +10,8 @@ export const ComponentsExport = [DisplayFormComponent, FormInputComponent];
 
 export const Components = [
   ...ComponentsExport,
+  CheckboxComponent,
+  CheckboxGroupComponent,
   FormGroupItemComponent,
   FormValueRendererComponent,
   RequestorInfoFormComponent,
