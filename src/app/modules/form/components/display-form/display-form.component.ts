@@ -10,7 +10,7 @@ import { FormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
 import { FormTableElement, PlayList, Status } from '../../../shared-types';
-import { PlayListService, StatusService, UserService } from '../../../shared';
+import { PlayListService, RoleService, StatusService, UserService } from '../../../shared';
 
 @Component({
   selector: 'app-display-form',
