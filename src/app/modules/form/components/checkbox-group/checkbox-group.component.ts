@@ -13,21 +13,21 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   ],
 })
 export class CheckboxGroupComponent implements ControlValueAccessor {
-  value: string[] = [];
+  value: unknown[] = [];
 
   constructor() {}
 
-  onChange = (value: string[]) => {};
+  onChange = (value: unknown[]) => {};
   onTouch = () => {};
 
   // Allow Angular to set the value on the component
-  writeValue(value: string[]): void {
+  writeValue(value: unknown[]): void {
     this.value = value;
   }
 
   // Save a reference to the change function passed to us by
   // the Angular form control
-  registerOnChange(fn: (value: string[]) => void): void {
+  registerOnChange(fn: (value: unknown[]) => void): void {
     this.onChange = fn;
   }
 
@@ -37,7 +37,7 @@ export class CheckboxGroupComponent implements ControlValueAccessor {
     this.onTouch = fn;
   }
 
-  toggleValue(selectedValue: string) {
+  toggleValue(selectedValue: unknown) {
     const index = this.value.indexOf(selectedValue);
 
     if (index > -1) {
@@ -53,7 +53,7 @@ export class CheckboxGroupComponent implements ControlValueAccessor {
     this.onTouch();
   }
 
-  isSelected(valueToCheck: string) {
-    return this.value.includes(valueToCheck);
+  isSelected(valueToCheck: unknown) {
+    return this.value.indexOf(valueToCheck) >= 0;
   }
 }

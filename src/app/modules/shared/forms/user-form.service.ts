@@ -55,5 +55,6 @@ export class UserForm extends BaseForm {
     picture: form.get('picture').value,
     color: form.get('color').value,
     status: form.get('status').value,
+    roles: form.get('roles').value,
   });
 }

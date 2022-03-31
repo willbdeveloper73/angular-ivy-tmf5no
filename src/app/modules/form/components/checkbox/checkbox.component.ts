@@ -6,7 +6,7 @@ import { CheckboxGroupComponent } from '../checkbox-group';
   templateUrl: './checkbox.component.html',
 })
 export class CheckboxComponent {
-  @Input() value: string;
+  @Input() value: unknown;
   @Input() label: string;
 
   constructor(@Host() public checkboxGroup: CheckboxGroupComponent) {}
