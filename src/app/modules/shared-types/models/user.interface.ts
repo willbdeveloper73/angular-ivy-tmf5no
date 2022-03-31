@@ -115,4 +115,11 @@ export const UserElements: Partial<FormTableElement>[] = [
     tableDisplay: true,
     display: true,
   },
+  {
+    name: 'roles',
+    label: 'Roles',
+    type: 'checkbox-group',
+    tableDisplay: false,
+    display: false,
+  },
 ];
