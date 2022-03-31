@@ -1,3 +1,5 @@
+import { CheckboxComponent } from './checkbox';
+import { CheckboxGroupComponent } from './checkbox-group';
 import { DisplayFormComponent } from './display-form';
 import { FormGroupItemComponent } from './form-group-item';
 import { FormInputComponent } from './form-input';
