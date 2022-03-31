@@ -1,5 +1,5 @@
 import { Component, Host, Input } from '@angular/core';
-import { CheckboxGroupComponent } from '../checkbox-group.component';
+import { CheckboxGroupComponent } from '../checkbox-group';
 
 @Component({
   selector: 'app-checkbox',
