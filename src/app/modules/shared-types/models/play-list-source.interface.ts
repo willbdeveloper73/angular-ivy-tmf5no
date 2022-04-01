@@ -28,12 +28,14 @@ export const PlayListSourceElements: Partial<FormTableElement>[] = [
     type: 'text',
     required: true,
     tableDisplay: true,
+    display: true,
   },
   {
     name: 'seq',
     label: 'Sequence',
     type: 'text',
     tableDisplay: true,
+    display: true,
   },
   {
     name: 'statusId',
@@ -42,6 +44,7 @@ export const PlayListSourceElements: Partial<FormTableElement>[] = [
     options: [],
     data: (row: Partial<PlayListItem>) => null,
     tableDisplay: true,
+    display: true,
   },
   {
     name: 'authorId',
@@ -50,30 +53,35 @@ export const PlayListSourceElements: Partial<FormTableElement>[] = [
     options: [],
     data: (row: Partial<PlayListItem>) => null,
     tableDisplay: true,
+    display: true,
   },
   {
     name: 'description',
     label: 'Description',
     type: 'textarea',
     tableDisplay: true,
+    display: true,
   },
   {
     name: 'url',
     label: 'Url',
     type: 'text',
     tableDisplay: true,
+    display: true,
   },
   {
     name: 'mimeType',
     label: 'Mime/Type',
     type: 'text',
     tableDisplay: true,
+    display: true,
   },
   {
     name: 'thumbnail',
     label: 'Thumbnail',
     type: 'text',
     tableDisplay: true,
+    display: true,
   },
   {
     name: 'createdAt',
@@ -81,6 +89,7 @@ export const PlayListSourceElements: Partial<FormTableElement>[] = [
     type: 'date',
     dateFormat: 'yyyy-MM-dd',
     tableDisplay: true,
+    display: true,
   },
   {
     name: 'updatedAt',
@@ -88,6 +97,7 @@ export const PlayListSourceElements: Partial<FormTableElement>[] = [
     type: 'date',
     dateFormat: 'yyyy-MM-dd',
     tableDisplay: true,
+    display: true,
   },
   {
     name: 'deletedAt',
@@ -95,5 +105,6 @@ export const PlayListSourceElements: Partial<FormTableElement>[] = [
     type: 'date',
     dateFormat: 'yyyy-MM-dd',
     tableDisplay: false,
+    display: false,
   },
 ];

@@ -1,0 +1,13 @@
+<div class="flex w-1/2 justify-center">
+    <div class="w-1/2">
+      <img class="h-48 scale-75" [src]="category?.image" />
+    </div>
+    <div class="w-1/2">
+      <div class="font-bold">{{ category?.name }}</div>
+      <div class="text-sm">
+        {{ category?.description | truncate: 100 }}
+      </div>
+    </div>
+  </div>
+  <!-- <div class="w-full flex-col"> -->
+  

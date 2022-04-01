@@ -10,11 +10,7 @@ import { FormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
 import { FormTableElement, PlayList, Status } from '../../../shared-types';
-import {
-  PlayListService,  
-  StatusService,
-  UserService,
-} from '../../../shared';
+import { PlayListService, RoleService, StatusService, UserService } from '../../../shared';
 
 @Component({
   selector: 'app-display-form',
@@ -31,7 +27,8 @@ export class DisplayFormComponent implements OnInit, OnDestroy {
   constructor(
     private statusService: StatusService,
     private playlistService: PlayListService,
-    private userService: UserService
+    private userService: UserService,
+    private roleService: RoleService,
   ) {}
 
   ngOnInit() {
@@ -43,6 +40,24 @@ export class DisplayFormComponent implements OnInit, OnDestroy {
     });
 
     this.checkService({ service: this.userService, columnName: 'authorId' });
+
+    this.checkService({ service: this.roleService, columnName: 'roles' });
+
+    // const index = this.elements?.findIndex((item) => item.name === 'roles');
+    // if(index >= 0) {
+    //   this.roleService.get();
+    //   this.roleService.items$
+    //     .pipe(
+    //       takeUntil(this.destroy$)
+    //     )
+    //     .subscribe(
+    //       (items: Partial<Role>[]) => {
+    //         this.elements[index].options = 
+    //     });
+
+    // }
+
+    console.log('this.Form:', this.Form);
   }
 
   ngOnDestroy() {
@@ -56,7 +71,7 @@ export class DisplayFormComponent implements OnInit, OnDestroy {
       checkService.get();
       checkService.items$
         .pipe(
-          map((items: unknown[]) => (this.elements[index].options = items)),
+          map((items: Partial<unknown>[]) => (this.elements[index].options = items)),
           takeUntil(this.destroy$)
         )
         .subscribe();

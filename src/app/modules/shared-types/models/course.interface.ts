@@ -24,12 +24,20 @@ export interface Course extends BaseName {
 }
 
 export const CourseElements: Partial<FormTableElement>[] = [
+  // {
+  //   label: 'ID',
+  //   name: 'id',
+  //   type: 'text',
+  //   tableDisplay: false,
+  //   display: false,
+  // },
   {
     label: 'Course Name',
     name: 'name',
     type: 'text',
     required: true,
     tableDisplay: true,
+    display: true,
   },
   {
     label: 'Playlist',
@@ -38,6 +46,7 @@ export const CourseElements: Partial<FormTableElement>[] = [
     options: [],
     data: (row: Partial<Course>) => null,
     tableDisplay: true,
+    display: true,
   },
   {
     label: 'Status',
@@ -46,30 +55,35 @@ export const CourseElements: Partial<FormTableElement>[] = [
     options: [],
     data: (row: Partial<Course>) => null,
     tableDisplay: true,
+    display: true,
   },
   {
     label: 'Subject',
     name: 'subject',
     type: 'text',
     tableDisplay: false,
+    display: false,
   },
   {
     label: 'Description',
     name: 'description',
     type: 'textarea',
     tableDisplay: false,
+    display: false,
   },
   {
     label: 'Duration',
     name: 'duration',
     type: 'text',
     tableDisplay: false,
+    display: false,
   },
   {
     label: 'Provider',
     name: 'provider',
     type: 'text',
     tableDisplay: false,
+    display: false,
   },
   {
     label: 'Date Published',
@@ -77,6 +91,7 @@ export const CourseElements: Partial<FormTableElement>[] = [
     type: 'date',
     dateFormat: 'yyyy-MM-dd',
     tableDisplay: true,
+    display: true,
   },
   {
     label: 'Date Updated',
@@ -84,6 +99,7 @@ export const CourseElements: Partial<FormTableElement>[] = [
     type: 'date',
     dateFormat: 'yyyy-MM-dd',
     tableDisplay: true,
+    display: true,
   },
 ];
 

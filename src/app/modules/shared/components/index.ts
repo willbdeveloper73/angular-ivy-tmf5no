@@ -1,27 +1,27 @@
-import { ButtonAddComponent } from './button-add';
-import { ButtonEditComponent } from './button-edit';
-import { ButtonDeleteComponent } from './button-delete';
+import { BellIconComponent } from './bell-icon';
 import { ChipComponent } from './chip';
-import { PaginationComponent } from './pagination';
+import { DialogComponent } from './dialog';
+import { HeaderButtonComponent } from './header-button';
 import { RatingStarsComponent } from './rating-stars';
+import { RightSideModalComponent } from './right-side-modal';
+import { SearchIconComponent } from './search-icon';
+import { SearchbarComponent } from './searchbar';
 import { TabComponent } from './tab';
-import { TableComponent } from './table';
 import { ToggleComponent } from './toggle';
 import { UserAvatarComponent } from './user-avatar';
-// import { UserProfileSummaryComponent } from './user-profile-summary';
 
 export const ComponentsExport = [
-  ToggleComponent,
-  ButtonAddComponent,
-  ButtonEditComponent,
-  ButtonDeleteComponent,
+  BellIconComponent,
   ChipComponent,
-  PaginationComponent,
+  DialogComponent,
+  HeaderButtonComponent,
   RatingStarsComponent,
+  RightSideModalComponent,
+  SearchbarComponent,
+  SearchIconComponent,
   TabComponent,
-  TableComponent,
+  ToggleComponent,
   UserAvatarComponent,
-  // UserProfileSummaryComponent,
 ];
 
 export const Components = [...ComponentsExport];

@@ -75,10 +75,10 @@ export class MenuService {
 
   //#region MainMenu
   #_mainMenu: Partial<NavbarItem>[] = [
-    {
-      link: '/',
-      text: 'Home',
-    },
+    // {
+    //   link: '/',
+    //   text: 'Home',
+    // },
     {
       link: '/course',
       text: 'Courses',

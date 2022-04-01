@@ -1,5 +1,4 @@
 import {
-  ChangeDetectionStrategy,
   Component,
   EventEmitter,
   Input,
@@ -7,15 +6,14 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
-import { map, takeUntil, tap } from 'rxjs/operators';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { map, takeUntil } from 'rxjs/operators';
 import { FormTableElement, Pagination } from '../../../shared-types';
-import { PlayListService, StatusService, UserService } from '../../services';
+import { PlayListService, StatusService, UserService } from '../../../shared';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TableComponent implements OnInit, OnDestroy {
   @Input() columns: Partial<FormTableElement>[] = [];
@@ -26,6 +24,13 @@ export class TableComponent implements OnInit, OnDestroy {
   @Output() add: EventEmitter<null> = new EventEmitter<null>();
   @Output() edit: EventEmitter<unknown> = new EventEmitter<unknown>();
   @Output() delete: EventEmitter<unknown> = new EventEmitter<unknown>();
+
+  headers: Partial<FormTableElement>[] = [];
+
+  display = (label: string): boolean =>
+    this.headers.find(
+      (header: Partial<FormTableElement>) => header.label === label
+    ).display;
 
   destroy$: Subject<boolean> = new Subject<boolean>();
 
@@ -42,6 +47,24 @@ export class TableComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
+    this.columns = this.columns.filter(
+      (column: Partial<FormTableElement>) => column.tableDisplay
+    );
+
+    this.headers = [
+      ...this.columns.map((column: Partial<FormTableElement>) => ({
+        label: column.label,
+        name: column.name,
+        tableDisplay: column.tableDisplay,
+        display: column.display || column.tableDisplay,
+      })),
+      {
+        label: 'Actions',
+        tableDisplay: true,
+        display: true,
+      },
+    ];
+
     this.#columns.next(this.columns);
 
     this.checkService({
@@ -75,9 +98,9 @@ export class TableComponent implements OnInit, OnDestroy {
       checkService.items$
         .pipe(
           map((items: Array<unknown>) => {
-            const index = this.columns?.findIndex(
-              (item) => item['name'] === columnName
-            );
+            // const index = this.columns?.findIndex(
+            //   (item) => item['name'] === columnName
+            // );
             if (index >= 0 && items) {
               const func = (row) => {
                 const rowFound = items?.find(
@@ -91,7 +114,6 @@ export class TableComponent implements OnInit, OnDestroy {
               };
 
               this.columns[index].data = (row) => func(row);
-              console.log;
             }
           }),
           takeUntil(this.destroy$)
