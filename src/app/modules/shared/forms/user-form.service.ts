@@ -32,6 +32,7 @@ export class UserForm extends BaseForm {
     picture: [record?.picture],
     color: [record?.color],
     status: [record?.status],
+    roles: [record?.roles],
   });
 
   patch = (record: Partial<User>) => ({
