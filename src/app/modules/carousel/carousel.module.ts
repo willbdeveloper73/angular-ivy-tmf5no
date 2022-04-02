@@ -1,10 +1,25 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { CarouselComponent } from "./carousel.component";
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {CarouselComponent} from './carousel.component';
 
 @NgModule({
-  imports: [CommonModule],
-  declarations: [CarouselComponent],
-  exports: [CarouselComponent]
+    declarations: [
+        CarouselComponent
+    ],
+    imports: [
+        CommonModule
+    ],
+    exports: [
+        CarouselComponent
+    ],
+    providers: [
+
+    ],
+    bootstrap: [
+        
+    ],
+    entryComponents: [
+        CarouselComponent
+    ]
 })
-export class CarouselModule {}
+export class CarouselModule { }

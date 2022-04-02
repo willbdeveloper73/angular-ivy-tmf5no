@@ -1,9 +1,25 @@
 <div class="w-full">
+
+  <carousel class="carousel-html-content">
+    <div class="carousel-cell" *ngFor="let item of items">
+      <div class="flex justify-center">
+        <div class="flex w-1/2 items-center justify-center">
+          <img class="h-48 scale-75" [src]="item?.image" />
+        </div>
+        <div class="flex w-1/2 flex-col justify-center">
+          <div class="font-bold">{{ item?.name }}</div>
+          <div class="text-sm">{{ item?.description | truncate: 100 }}</div>
+        </div>
+      </div>
+
+    </div>
+  </carousel>
+
+</div>
+
+<!-- <div class="w-full">
   <div
     carousel
-    class="
-      <!-- justify-center w-2/3 -->
-    "
     [startAt]="0"
     [width]="250"
     [items]="items"
@@ -50,15 +66,8 @@
     </button>
   </ng-template>
 
-  <!-- <ng-template let-item let-i="index" #itemTemplate>
-  <div style="min-width: 200px">
-    <b *ngIf="i === selectedIndex">{{i}}. {{item.name}}</b>
-    <span *ngIf="i !== selectedIndex">{{i}}. {{item.name}}</span>
-  </div>
-</ng-template> -->
-
   <ng-template let-item let-i="index" #itemTemplate>
-    <div class="flex justify-center">
+    <div *ngIf="i === selectedIndex" class="flex justify-center">
       <div class="flex w-1/2 items-center justify-center">
         <img class="h-48 scale-75" [src]="item?.image" />
       </div>
@@ -69,16 +78,5 @@
     </div>
   </ng-template>
 
-  <!-- <div class="flex w-1/2 justify-center">
-  <div class="w-1/2">
-    <img class="h-48 scale-75" [src]="category?.image" />
-  </div>
-  <div class="w-1/2">
-    <div class="font-bold">{{ category?.name }}</div>
-    <div class="text-sm">
-      {{ category?.description | truncate: 100 }}
-    </div>
-  </div>
 </div> -->
-  <!-- <div class="w-full flex-col"> -->
-</div>
+
