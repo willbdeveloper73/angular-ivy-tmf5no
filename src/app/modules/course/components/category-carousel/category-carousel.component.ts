@@ -6,6 +6,7 @@ import { Category } from '../../../shared-types';
   templateUrl: './category-carousel.component.html',
 })
 export class CategoryCarouselComponent {
-  @Input() category: Partial<Category> = {};
+  // @Input() category: Partial<Category> = {};
+  @Input() items: Partial<Category>[] = [];
   @Input() allowCategoryNavigate: boolean = false;
 }

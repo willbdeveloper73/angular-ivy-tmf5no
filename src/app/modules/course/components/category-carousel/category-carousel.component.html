@@ -1,13 +1,65 @@
-<div class="flex w-1/2 justify-center">
-    <div class="w-1/2">
-      <img class="h-48 scale-75" [src]="category?.image" />
+<div
+  carousel
+  [startAt]="1"
+  [width]="500"
+  [items]="items"
+  [$item]="itemTemplate"
+  [$prev]="prevTemplate"
+  [$next]="nextTemplate"
+  (onSelectedItem)="selectedItem = $event.item; selectedIndex = $event.index"
+></div>
+
+<div>
+Current item selected
+{{ selectedIndex }}
+</div>
+
+<ng-template #prevTemplate>
+<button class="controls">Previous</button>
+</ng-template>
+
+<ng-template #nextTemplate>
+<button class="controls">Next</button>
+</ng-template>
+
+
+<!-- <ng-template let-item let-i="index" #itemTemplate>
+  <div style="min-width: 200px">
+    <b *ngIf="i === selectedIndex">{{i}}. {{item.name}}</b>
+    <span *ngIf="i !== selectedIndex">{{i}}. {{item.name}}</span>
+  </div>
+</ng-template> -->
+
+<ng-template let-item let-i="index" #itemTemplate>
+  <div class="flex w-1/2 justify-center">
+    <div class="flex w-1/2 items-center justify-center">
+      <img class="h-48 scale-75" [src]="item?.image" />
     </div>
-    <div class="w-1/2">
-      <div class="font-bold">{{ category?.name }}</div>
-      <div class="text-sm">
-        {{ category?.description | truncate: 100 }}
-      </div>
+    <div class="flex w-1/2 flex-col justify-center">
+      <div class="font-bold">{{ item?.name }}</div>
+      <div class="text-sm">{{ item?.description | truncate: 100 }}</div>
     </div>
   </div>
+    </div>
+  
+  <!-- <div class="item">
+    <img [src]="item" alt="" />
+    <span class="description">Simple image</span>
+  </div> -->
+</ng-template>
+</div>
+
+
+<!-- <div class="flex w-1/2 justify-center">
+  <div class="w-1/2">
+    <img class="h-48 scale-75" [src]="category?.image" />
+  </div>
+  <div class="w-1/2">
+    <div class="font-bold">{{ category?.name }}</div>
+    <div class="text-sm">
+      {{ category?.description | truncate: 100 }}
+    </div>
+  </div>
+</div> -->
   <!-- <div class="w-full flex-col"> -->
   
