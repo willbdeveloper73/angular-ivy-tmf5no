@@ -18,8 +18,8 @@ import {
   
   @Component({
     selector: "[carousel]",
-    styleUrls: ["./carousel.component.scss"],
-    templateUrl: "./carousel.component.html"
+    templateUrl: "./carousel.component.html",
+    // styleUrls: ["./carousel.component.scss"],
   })
   /*
    *

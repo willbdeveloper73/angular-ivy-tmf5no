@@ -1,6 +1,6 @@
-<div class="ng2-carouselamos-container">
+<div class="relative flex justify-center">
     <div
-      class="ng2-carouselamos-wrapper"
+      class="overflow-hidden"
       [style.width]="width + 'px'"
       (mousedown)="onMousedown($event)"
       (touchstart)="onTouchdown($event)"
@@ -11,7 +11,7 @@
       (touchend)="onTouchup($event, list)"
     >
       <div
-        class="ng2-carouselamos"
+        class="flex transition duration-1000"
         [attr.startPress]="startPress"
         [style.transition]="startPress > 0 ? 'none' : '-webkit-transform 1s'"
         [style.webkitTransition]="
@@ -32,7 +32,7 @@
         ></ng-template>
       </div>
     </div>
-    <div class="controls" *ngIf="$prev || $next">
+    <div class="pointer-events-none absolute flex w-full justify-between top-1/2 left-0 -translate-y-2/4" *ngIf="$prev || $next">
       <button
         type="button"
         *ngIf="$prev"
