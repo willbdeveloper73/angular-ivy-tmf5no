@@ -13,7 +13,7 @@ import {Properties as CarouselProperties} from './interfaces';
 @Component({
     selector: 'carousel, [carousel]',
     templateUrl: './carousel.component.html',
-    styleUrls: ['./carousel.component.sass']
+    styleUrls: ['./carousel.component.scss']
 })
 
 export class CarouselComponent implements OnDestroy {
