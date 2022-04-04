@@ -1,8 +1,10 @@
+<!-- <pre>carouselProperties: {{ carouselProperties | json }}</pre>
 <pre>cellsToShow: {{ cellsToShow }}</pre>
 <pre>cellsToScroll: {{ cellsToScroll }}</pre>
 <pre>slideCounter: {{ slideCounter }}</pre>
+<pre>counter: {{ counter }}</pre>
 <pre>cellLength: {{ cellLength }}</pre>
-<pre>activeDotIndex: {{ activeDotIndex }}</pre>
+<pre>activeDotIndex: {{ activeDotIndex }}</pre> -->
 <div
   class="
     carousel-counter
@@ -65,8 +67,8 @@
         w-2
         h-2
       "
-      [ngClass]="{ 'bg-white': i === activeDotIndex }"
       *ngFor="let dot of dotsArr; index as i"
+      [ngClass]="{ 'bg-white': i === activeDotIndex }"
     ></div>
   </div>
 </div>
@@ -78,13 +80,45 @@
   *ngIf="isArrows"
 >
   <div
-    class="carousel-arrow carousel-arrow-prev -left-[60px]"
-    [class.carousel-arrow-disabled]="isPrevArrowDisabled()"
+    class="carousel-arrow carousel-arrow-prev left-[10px]"
+    [ngClass]="{
+      '-left-[60px]': arrowsOutside,
+      'cursor-default opacity-50': isPrevArrowDisabled()
+    }"
     (click)="prev()"
-  ></div>
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-10 w-10"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+        clip-rule="evenodd"
+      />
+    </svg>
+  </div>
   <div
-    class="carousel-arrow carousel-arrow-next -right-[60px]"
-    [class.carousel-arrow-disabled]="isNextArrowDisabled()"
+    class="carousel-arrow carousel-arrow-next right-[10px]"
+    [ngClass]="{
+      '-right-[60px]': arrowsOutside,
+      'cursor-default opacity-50': isNextArrowDisabled()
+    }"
     (click)="next()"
-  ></div>
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-10 w-10"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+        clip-rule="evenodd"
+      />
+    </svg>
+  </div>
 </div>

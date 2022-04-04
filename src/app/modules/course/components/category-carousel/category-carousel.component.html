@@ -1,16 +1,42 @@
-<div class="w-full bg-grey-500">
+<div
+  class="
+    bg-grey-500
+    relative
+    block
+    top-0
+    left-0
+    w-full
+    h-full
+    z-30
+    select-none
+    box-border
+    transform
+    origin-top-left
+  "
+>
   <carousel
-    class="carousel-html-content bg-gray-500"
-    [cellWidth]="'100%'"
+    class="
+      carousel-html-content
+      flex
+      w-4/5
+      justify-center
+      items-center
+      bg-gray-500
+    "
     [cellsToShow]="1"
+    [arrows]="true"
     [dots]="true"
     [counter]="true"
+    [arrowsOutside]="false"
   >
+    <!-- [autoplay]="true" -->
+    <!-- [overflowCellsLimit]="100" -->
+    <!-- [freeScroll]="false" -->
     <!-- [height]="300"
     [autoplay]="true"
     [dots]="true"
     [loop]="true" -->
-    <div
+    <article
       class="
         carousel-cell
         flex
@@ -35,7 +61,7 @@
         <p class="text-sm">{{ item?.description | truncate: 100 }}</p>
       </span>
       <!-- </span> -->
-    </div>
+    </article>
   </carousel>
 </div>
 
