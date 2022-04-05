@@ -1,10 +1,11 @@
 
-  <carousel>
-    <ng-container *ngFor="let item of items;">
-      <ng-container *carouselItem>
+<div style="max-width:750px;margin:5vh auto;">
+  <carousel [infinite]="true" [auto]="true" [bullets]="false">
+    <ng-container *ngFor="let item of items">
+      <div *carouselSlide>
         <article
         class="
-          carousel-cell
+          slide
           flex
           items-center
           justify-center
@@ -16,6 +17,7 @@
           overflow-hidden
           bg-yellow-500
         "
+        *ngFor="let item of items"
       >
         <span class="flex w-1/2 items-center justify-center">
           <img class="h-48 scale-75" [src]="item?.image" />
@@ -25,9 +27,10 @@
           <p class="text-sm">{{ item?.description | truncate: 100 }}</p>
         </span>
       </article>
-        </ng-container>
+      </div>
     </ng-container>
   </carousel>
+</div>
 
 <!-- <div
   class="
