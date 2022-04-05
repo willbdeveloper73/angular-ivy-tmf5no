@@ -56,8 +56,20 @@
         "
         (mouseenter)="stopInterval()"
         (mouseleave)="startInterval()">
-        <li *ngFor="let slide of slides; let index = index" [ngClass]="{'carousel__slide--active':index===currentSlide}"
-            class="carousel__slide">
+        <li
+            *ngFor="let slide of slides; let index = index"
+            [ngClass]="{'carousel__slide--active':index===currentSlide}"
+            class="
+                carousel__slide
+                realtive
+                box-border
+                w-full
+                px-16
+                min-w-full
+                max-w-full
+                transition-opacity duration-300 ease-in-out
+                transform
+            ">
           <ng-container [ngTemplateOutlet]="slide.template"></ng-container>
         </li>
       </ol>
