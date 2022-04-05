@@ -10,17 +10,19 @@ import {
   OnDestroy,
   Output,
   QueryList,
-  SimpleChanges
+  SimpleChanges,
 } from '@angular/core';
 
-import {CarouselSlideDirective} from "./slide.directive";
+import { CarouselSlideDirective } from './slide.directive';
 
 @Component({
   selector: 'carousel',
   templateUrl: './carousel.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CarouselComponent implements OnChanges, AfterContentChecked, OnDestroy {
+export class CarouselComponent
+  implements OnChanges, AfterContentChecked, OnDestroy
+{
   @Input() public bullets: boolean = true;
   @Input() public infinite: boolean = false;
   @Input() public auto: boolean = false;
@@ -30,17 +32,21 @@ export class CarouselComponent implements OnChanges, AfterContentChecked, OnDest
   @Output() public previous: EventEmitter<number> = new EventEmitter<number>();
   @Output() public next: EventEmitter<number> = new EventEmitter<number>();
 
-  @ContentChildren(CarouselSlideDirective) public slides: QueryList<CarouselSlideDirective> = new QueryList<CarouselSlideDirective>();
+  @ContentChildren(CarouselSlideDirective)
+  public slides: QueryList<CarouselSlideDirective> = new QueryList<CarouselSlideDirective>();
 
   public currentSlide: number = 0;
 
   private interval: number = 0;
 
-  constructor(private cdr: ChangeDetectorRef) { }
+  constructor(private cdr: ChangeDetectorRef) {}
 
   public ngAfterContentChecked(): void {
     this.cdr.detectChanges();
-    this.currentSlide = Math.max(Math.min(this.currentSlide, this.slides.length - 1), 0);
+    this.currentSlide = Math.max(
+      Math.min(this.currentSlide, this.slides.length - 1),
+      0
+    );
   }
 
   public ngOnChanges(changes: SimpleChanges): void {
@@ -142,5 +148,4 @@ export class CarouselComponent implements OnChanges, AfterContentChecked, OnDest
     this.stopInterval();
     this.startInterval();
   }
-
 }

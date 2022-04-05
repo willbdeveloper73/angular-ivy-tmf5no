@@ -12,4 +12,10 @@ export class CategoryCarouselComponent {
 
   selectedIndex: number = -1;
   selectedItem: Partial<Category> = {};
+
+  page: number = 0;
+
+  setPage(page: number) {
+    this.page = page;
+  }
 }
