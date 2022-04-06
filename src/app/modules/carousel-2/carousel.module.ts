@@ -2,7 +2,7 @@ import {CommonModule} from "@angular/common";
 import {NgModule} from '@angular/core';
 
 import {CarouselComponent} from './carousel.component';
-import {CarouselSlideDirective} from "./slide.directive";
+import {CarouselSlideDirective} from './slide.directive';
 
 
 @NgModule({
