@@ -6,6 +6,7 @@ import { SearchBarComponent } from './search-bar';
 import { SelectUserComponent } from './select-user';
 import { TopNavComponent } from './top-nav';
 import { UserProfileComponent } from './user-profile';
+import { BottomNavComponent } from './bottom-nav';
 
 export const ComponentsExport = [LayoutComponent];
 
@@ -18,4 +19,5 @@ export const Components = [
   SelectUserComponent,
   TopNavComponent,
   UserProfileComponent,
+  BottomNavComponent,
 ];
